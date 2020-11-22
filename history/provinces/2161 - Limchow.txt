@@ -1,0 +1,42 @@
+# 2161 - Limchow
+
+owner = CGS # MNG
+controller = CGS # MNG
+add_core = CGS # MNG
+culture = cantonese
+religion = confucianism
+capital = "Limchow"
+trade_goods = incense
+hre = no
+base_tax = 3 
+base_production = 2
+base_manpower = 2
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+discovered_by = indian
+
+1514.1.1 = { discovered_by = POR }
+1647.4.1 = {
+	owner = CGS # QNG
+	controller = CGS # QNG
+	add_core = CGS # QNG
+}
+1648.4.15 = { 
+	controller = CGS # MNG 
+	owner = CGS # MNG
+}
+1651.1.1 = {
+	owner = CGS # QNG
+	controller = CGS # QNG
+}
+1662.4.1 = {
+	owner = CGS # CZH
+	controller = CGS # CZH
+	add_core = CGS # CZH
+} # Three Feudatories
+1681.10.1 = {
+	owner = CGS # QNG
+	controller = CGS # QNG
+	add_core = CGS # QNG
+}

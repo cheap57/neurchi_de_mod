@@ -1,0 +1,215 @@
+#namespace = neurchi
+country_event = {
+	id = conduct_census_decree_answer
+	title = conduct_census_decree_answer.1.t
+	desc = conduct_census_decree_answer.1.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = decree.1.a
+		add_country_modifier = {
+					name = conducted_census_decree
+					duration = 3650
+				}
+		add_meritocracy = -25
+		any_country = {
+			has_reform = celestial_empire
+
+			country_event = {
+					id = decree_accepted
+				}		
+			add_prestige = 1
+			add_meritocracy = 5
+		}
+	}
+	option = {
+		name = decree.1.b
+		any_country = {
+			has_reform = celestial_empire
+			country_event = {
+					id = decree_declined
+				}
+			add_prestige = -5
+		}
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = promote_naval_officers_decree_answer
+	title = promote_naval_officers_decree_answer.1.t
+	desc = promote_naval_officers_decree_answer.1.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = decree.1.a
+		add_country_modifier = {
+					name = promoted_naval_officers_decree
+					duration = 3650
+				}
+		add_meritocracy = -25
+		any_country = {
+			has_reform = celestial_empire
+
+			country_event = {
+					id = decree_accepted
+				}		
+			add_prestige = 1
+			add_meritocracy = 5
+		}
+	}
+	option = {
+		name = decree.1.b
+		any_country = {
+			has_reform = celestial_empire
+			country_event = {
+					id = decree_declined
+				}
+			add_prestige = -5
+		}
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = increase_tariff_control_decree_answer
+	title = increase_tariff_control_decree_answer.1.t
+	desc = increase_tariff_control_decree_answer.1.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = decree.1.a
+		add_country_modifier = {
+					name = increased_tariff_control_decree
+					duration = 3650
+				}
+		add_meritocracy = -25
+		any_country = {
+			has_reform = celestial_empire
+
+			country_event = {
+					id = decree_accepted
+				}		
+			add_prestige = 1
+			add_meritocracy = 5
+		}
+	}
+	option = {
+		name = decree.1.b
+		any_country = {
+			has_reform = celestial_empire
+			country_event = {
+					id = decree_declined
+				}
+			add_prestige = -5
+		}
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = improve_defence_effort_decree_answer
+	title = improve_defence_effort_decree_answer.1.t
+	desc = improve_defence_effort_decree_answer.1.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = decree.1.a
+		add_country_modifier = {
+					name = improved_defence_effort_decree
+					duration = 3650
+				}
+		add_meritocracy = -25
+		any_country = {
+			has_reform = celestial_empire
+
+			country_event = {
+					id = decree_accepted
+				}		
+			add_prestige = 1
+			add_meritocracy = 5
+		}
+	}
+	option = {
+		name = decree.1.b
+		any_country = {
+			has_reform = celestial_empire
+			country_event = {
+					id = decree_declined
+				}
+			add_prestige = -5
+		}
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = boost_officer_corps_decree_answer
+	title = boost_officer_corps_decree_answer.1.t
+	desc = boost_officer_corps_decree_answer.1.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = decree.1.a
+		add_country_modifier = {
+					name = boosted_officer_corps_decree
+					duration = 3650
+				}
+		add_meritocracy = -25
+		any_country = {
+			has_reform = celestial_empire
+
+			country_event = {
+					id = decree_accepted
+				}		
+			add_prestige = 1
+			add_meritocracy = 5
+		}
+	}
+	option = {
+		name = decree.1.b
+		any_country = {
+			has_reform = celestial_empire
+			country_event = {
+					id = decree_declined
+				}
+			add_prestige = -5
+		}
+		add_prestige = 5
+	}
+}
+
+country_event = {
+	id = decree_accepted
+	title = decree_accepted.1.t
+	desc = decree_accepted.1.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+		option = {
+		name = decree_accepted.1.a
+		#add_prestige = 1
+		#add_meritocracy = 5
+	}
+}
+
+country_event = {
+	id = decree_declined
+	title = decree_declined.1.t
+	desc = decree_declined.1.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+		option = {
+		name = decree_declined.1.a
+		#add_prestige = -1
+	}
+}
