@@ -361,6 +361,7 @@ celestial_empire = {
 	legacy_equivalent = celestial_empire_legacy
 	maintain_dynasty = yes
 	allow_force_tributary = no
+	allow_vassal_alliance = yes
 	valid_for_nation_designer = yes
 	nation_designer_cost = 10
 	lock_level_when_selected = yes

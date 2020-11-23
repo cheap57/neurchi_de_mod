@@ -1,5 +1,43 @@
 #namespace = neurchi
 country_event = {
+	id = reformed_china_attacked
+	title = reformed_china_attacked.t
+	desc = reformed_china_attacked.d
+	picture = TRADEGOODS_eventPicture
+	
+	#is_triggered_only = yes
+	#fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		has_global_flag = chinese_reform_5
+		any_country = {
+			has_reform = celestial_empire
+			has_reform = chinese_plutocratic_reform
+			
+			any_country = {
+				NOT = { has_reform = celestial_empire }
+				NOT = { has_reform = chinese_plutocratic_reform }
+				offensive_war_with = FROM
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 0
+	}
+	
+	option = {
+		name = ok
+		any_country = {
+			limit = {
+			has_reform = celestial_empire
+			has_reform = chinese_plutocratic_reform
+			}
+			join_all_defensive_wars_of = FROM
+		}
+	}
+}
+country_event = {
 	id = conduct_census_decree_answer
 	title = conduct_census_decree_answer.1.t
 	desc = conduct_census_decree_answer.1.d
@@ -213,3 +251,4 @@ country_event = {
 		#add_prestige = -1
 	}
 }
+

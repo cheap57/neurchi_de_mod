@@ -255,7 +255,7 @@ country_decisions = {
 		potential = {
 			has_reform = celestial_empire
 			has_global_flag = chinese_reform_4
-			NOT = { has_global_flag = chinese_reform_1 }
+			NOT = { has_global_flag = chinese_reform_5 }
 		}
 
 		allow = {
