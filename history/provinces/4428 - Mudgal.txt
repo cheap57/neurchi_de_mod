@@ -20,11 +20,6 @@ discovered_by = ottoman
 discovered_by = chinese
 
 
-1378.1.1 = {
-	controller = KLN #controller = BAH
-	owner = KLN #owner = BAH
-}
-1428.1.1 = { add_core = BAH }
 1493.1.1 = {
 	owner = KLN #owner = VIJ
 	controller = KLN #controller = VIJ
