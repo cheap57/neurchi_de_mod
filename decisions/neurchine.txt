@@ -1,15 +1,44 @@
 country_decisions = {
 
 #expand_bureaucracy_decree
-
 #promote_naval_officers_decree
-
 #increase_tariff_control_decree
+#improve_defence_effort_decree
+#boost_officer_corps_decree
 
-#improve_defence_effort_decree 
+	expand_bureaucracy_decree = {
+		potential = {
+			has_reform = celestial_empire
+		}
 
-#boost_officer_corps_decree 
+		allow = {
+			meritocracy = 80
+			NOT = { has_country_modifier = expanded_bureaucracy_decree }
+		}
 
+		effect = {
+			add_meritocracy = -50
+			add_country_modifier = {
+					name = expanded_bureaucracy_decree
+					duration = 3650
+				}
+			every_country = {
+				limit = {
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						primary_culture = bai
+					}
+					is_subject_of_type = tributary_state
+					NOT = { has_reform = celestial_empire }
+				}
+				country_event = {
+					id = neurchi_mandate.1
+				}
+			}
+		}
+	}
 	conduct_census_decree = {
 		potential = {
 			has_reform = celestial_empire
@@ -38,13 +67,14 @@ country_decisions = {
 					NOT = { has_reform = celestial_empire }
 				}
 				country_event = {
-					id = conduct_census_decree_answer
+					id = neurchi_mandate.2
 				}
 			}
 		}
 	}
-	promote_naval_officers_decree = {
 	
+	promote_naval_officers_decree = {
+
 		potential = {
 			has_reform = celestial_empire
 		}
@@ -72,13 +102,13 @@ country_decisions = {
 					NOT = { has_reform = celestial_empire }
 				}
 				country_event = {
-					id = promote_naval_officers_decree_answer
+					id = neurchi_mandate.3
 				}
 			}
 		}
 	}
 	increase_tariff_control_decree = {
-	
+
 		potential = {
 			has_reform = celestial_empire
 		}
@@ -106,13 +136,13 @@ country_decisions = {
 					NOT = { has_reform = celestial_empire }
 				}
 				country_event = {
-					id = increase_tariff_control_decree_answer
+					id = neurchi_mandate.4
 				}
 			}
 		}
 	}
 	improve_defence_effort_decree = {
-	
+
 		potential = {
 			has_reform = celestial_empire
 		}
@@ -140,13 +170,13 @@ country_decisions = {
 					NOT = { has_reform = celestial_empire }
 				}
 				country_event = {
-					id = improve_defence_effort_decree_answer
+					id = neurchi_mandate.5
 				}
 			}
 		}
 	}
 	boost_officer_corps_decree = {
-	
+
 		potential = {
 			has_reform = celestial_empire
 		}
@@ -174,12 +204,12 @@ country_decisions = {
 					NOT = { has_reform = celestial_empire }
 				}
 				country_event = {
-					id = boost_officer_corps_decree_answer
+					id = neurchi_mandate.6
 				}
 			}
 		}
 	}
-	
+
 	chinese_reform_1 = {
 		potential = {
 			has_reform = celestial_empire

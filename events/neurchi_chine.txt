@@ -1,50 +1,52 @@
-#namespace = neurchi
+namespace = neurchi_mandate
+#expand_bureaucracy_decree
+
 country_event = {
-	id = reformed_china_attacked
-	title = reformed_china_attacked.t
-	desc = reformed_china_attacked.d
+	id = neurchi_mandate.1
+	title = neurchi_mandate.1.t
+	desc = neurchi_mandate.1.d
 	picture = TRADEGOODS_eventPicture
-	
-	#is_triggered_only = yes
-	#fire_only_once = yes
-	major = yes
-	
-	trigger = {
-		has_global_flag = chinese_reform_5
-		any_country = {
-			has_reform = celestial_empire
-			has_reform = chinese_plutocratic_reform
-			
-			any_country = {
-				NOT = { has_reform = celestial_empire }
-				NOT = { has_reform = chinese_plutocratic_reform }
-				offensive_war_with = FROM
-			}
-		}
-	}
-	mean_time_to_happen = {
-		months = 0
-	}
-	
+
+	is_triggered_only = yes
+
 	option = {
-		name = ok
+		name = decree.1.a
+		add_country_modifier = {
+					name = expanded_bureaucracy_decree
+					duration = 3650
+				}
+		add_meritocracy = -25
 		any_country = {
-			limit = {
 			has_reform = celestial_empire
-			has_reform = chinese_plutocratic_reform
-			}
-			join_all_defensive_wars_of = FROM
+
+			country_event = {
+					id = neurchi_mandate.91
+				}
+			add_prestige = 1
+			add_meritocracy = 5
 		}
+	}
+	option = {
+		name = decree.1.b
+		any_country = {
+			has_reform = celestial_empire
+			country_event = {
+					id = neurchi_mandate.92
+				}
+			add_prestige = -5
+		}
+		add_prestige = 5
 	}
 }
+
 country_event = {
-	id = conduct_census_decree_answer
-	title = conduct_census_decree_answer.1.t
-	desc = conduct_census_decree_answer.1.d
+	id = neurchi_mandate.2
+	title = neurchi_mandate.2.t
+	desc = neurchi_mandate.2.d
 	picture = TRADEGOODS_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = decree.1.a
 		add_country_modifier = {
@@ -56,8 +58,8 @@ country_event = {
 			has_reform = celestial_empire
 
 			country_event = {
-					id = decree_accepted
-				}		
+					id = neurchi_mandate.91
+				}
 			add_prestige = 1
 			add_meritocracy = 5
 		}
@@ -67,7 +69,7 @@ country_event = {
 		any_country = {
 			has_reform = celestial_empire
 			country_event = {
-					id = decree_declined
+					id = neurchi_mandate.92
 				}
 			add_prestige = -5
 		}
@@ -75,13 +77,13 @@ country_event = {
 	}
 }
 country_event = {
-	id = promote_naval_officers_decree_answer
-	title = promote_naval_officers_decree_answer.1.t
-	desc = promote_naval_officers_decree_answer.1.d
+	id = neurchi_mandate.3
+	title = neurchi_mandate.3.t
+	desc = neurchi_mandate.3.d
 	picture = TRADEGOODS_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = decree.1.a
 		add_country_modifier = {
@@ -93,8 +95,8 @@ country_event = {
 			has_reform = celestial_empire
 
 			country_event = {
-					id = decree_accepted
-				}		
+					id = neurchi_mandate.91
+				}
 			add_prestige = 1
 			add_meritocracy = 5
 		}
@@ -104,7 +106,7 @@ country_event = {
 		any_country = {
 			has_reform = celestial_empire
 			country_event = {
-					id = decree_declined
+					id = neurchi_mandate.92
 				}
 			add_prestige = -5
 		}
@@ -112,13 +114,13 @@ country_event = {
 	}
 }
 country_event = {
-	id = increase_tariff_control_decree_answer
-	title = increase_tariff_control_decree_answer.1.t
-	desc = increase_tariff_control_decree_answer.1.d
+	id = neurchi_mandate.4
+	title = neurchi_mandate.4.t
+	desc = neurchi_mandate.4.d
 	picture = TRADEGOODS_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = decree.1.a
 		add_country_modifier = {
@@ -130,8 +132,8 @@ country_event = {
 			has_reform = celestial_empire
 
 			country_event = {
-					id = decree_accepted
-				}		
+					id = neurchi_mandate.91
+				}
 			add_prestige = 1
 			add_meritocracy = 5
 		}
@@ -141,7 +143,7 @@ country_event = {
 		any_country = {
 			has_reform = celestial_empire
 			country_event = {
-					id = decree_declined
+					id = neurchi_mandate.92
 				}
 			add_prestige = -5
 		}
@@ -149,13 +151,13 @@ country_event = {
 	}
 }
 country_event = {
-	id = improve_defence_effort_decree_answer
-	title = improve_defence_effort_decree_answer.1.t
-	desc = improve_defence_effort_decree_answer.1.d
+	id = neurchi_mandate.5
+	title = neurchi_mandate.5.t
+	desc = neurchi_mandate.5.d
 	picture = TRADEGOODS_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = decree.1.a
 		add_country_modifier = {
@@ -167,8 +169,8 @@ country_event = {
 			has_reform = celestial_empire
 
 			country_event = {
-					id = decree_accepted
-				}		
+					id = neurchi_mandate.91
+				}
 			add_prestige = 1
 			add_meritocracy = 5
 		}
@@ -178,7 +180,7 @@ country_event = {
 		any_country = {
 			has_reform = celestial_empire
 			country_event = {
-					id = decree_declined
+					id = neurchi_mandate.92
 				}
 			add_prestige = -5
 		}
@@ -186,13 +188,13 @@ country_event = {
 	}
 }
 country_event = {
-	id = boost_officer_corps_decree_answer
-	title = boost_officer_corps_decree_answer.1.t
-	desc = boost_officer_corps_decree_answer.1.d
+	id = neurchi_mandate.6
+	title = neurchi_mandate.6.t
+	desc = neurchi_mandate.6.d
 	picture = TRADEGOODS_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = decree.1.a
 		add_country_modifier = {
@@ -204,8 +206,8 @@ country_event = {
 			has_reform = celestial_empire
 
 			country_event = {
-					id = decree_accepted
-				}		
+					id = neurchi_mandate.91
+				}
 			add_prestige = 1
 			add_meritocracy = 5
 		}
@@ -215,7 +217,7 @@ country_event = {
 		any_country = {
 			has_reform = celestial_empire
 			country_event = {
-					id = decree_declined
+					id = neurchi_mandate.92
 				}
 			add_prestige = -5
 		}
@@ -224,13 +226,13 @@ country_event = {
 }
 
 country_event = {
-	id = decree_accepted
-	title = decree_accepted.1.t
-	desc = decree_accepted.1.d
+	id = neurchi_mandate.91
+	title = neurchi_mandate.decree_accepted.1.t
+	desc = neurchi_mandate.decree_accepted.1.d
 	picture = TRADEGOODS_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 		option = {
 		name = decree_accepted.1.a
 		#add_prestige = 1
@@ -239,16 +241,55 @@ country_event = {
 }
 
 country_event = {
-	id = decree_declined
-	title = decree_declined.1.t
-	desc = decree_declined.1.d
+	id = neurchi_mandate.92
+	title = neurchi_mandate.decree_declined.1.t
+	desc = neurchi_mandate.decree_declined.1.d
 	picture = TRADEGOODS_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 		option = {
 		name = decree_declined.1.a
 		#add_prestige = -1
 	}
 }
 
+
+country_event = {
+	id = neurchi_mandate.50
+	title = neurchi_mandate.reformed_china_attacked.t
+	desc = neurchi_mandate.reformed_china_attacked.d
+	picture = TRADEGOODS_eventPicture
+
+	#is_triggered_only = yes
+	#fire_only_once = yes
+	major = yes
+
+	trigger = {
+		has_global_flag = chinese_reform_5
+		any_country = {
+			has_reform = celestial_empire
+			has_reform = chinese_plutocratic_reform
+
+			any_country = {
+				NOT = { has_reform = celestial_empire }
+				NOT = { has_reform = chinese_plutocratic_reform }
+				offensive_war_with = FROM
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 0
+	}
+
+	option = {
+		name = ok
+		any_country = {
+			limit = {
+			has_reform = celestial_empire
+			has_reform = chinese_plutocratic_reform
+			}
+			join_all_defensive_wars_of = FROM
+		}
+	}
+}

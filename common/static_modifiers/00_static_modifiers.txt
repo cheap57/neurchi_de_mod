@@ -608,6 +608,10 @@ positive_mandate = {	# 100% strength at 100 mandate, 0% at 50 mandate
 #	global_institution_spread = 0.1
 #	meritocracy = 1
 }
+expanded_bureaucracy_decree = {
+	development_cost = -0.1
+	core_creation = -0.1
+}
 
 conducted_census_decree = {
 	global_tax_modifier = 0.25

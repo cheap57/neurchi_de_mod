@@ -1,8 +1,8 @@
 # 2166 - Dehong
 
-owner = CDL # MMA
-controller = CDL # MMA
-add_core = CDL # MMA
+owner = CYI # MMA
+controller = CYI # MMA
+add_core = CYI # MMA
 culture = shan
 religion = buddhism
 capital = "Dehong"

@@ -20,7 +20,7 @@ east_indian_trade_route = {
 				continent = oceania
 			}
 		}
-		
+
 	}
 
 	trigger = {
@@ -38,7 +38,7 @@ east_indian_trade_route = {
 		}
 	}
 
-	trade_efficiency = 0.05	
+	trade_efficiency = 0.05
 }
 
 #########################################################
@@ -301,9 +301,9 @@ catholic_rome = {
 		NOT = { tag = PAP }
 	}
 
-	trigger = {	
+	trigger = {
 		NOT = { overlord_of = PAP }
-		owns_or_vassal_of = 118 # Roma		
+		owns_or_vassal_of = 118 # Roma
 		NOT = { tag = ITA }
 		NOT = { tag = ROM }
 	}
@@ -321,7 +321,7 @@ papal_subjugation = {
 		NOT = { tag = PAP }
 	}
 
-	trigger = {	
+	trigger = {
 		overlord_of = PAP
 		NOT = { tag = ITA }
 	}
@@ -341,7 +341,7 @@ rapid_collapse_of_society = {
 				continent = new_world
 			}
 		}
-		
+
 	}
 	trigger = {
 		NOT = { has_institution = feudalism }
@@ -356,11 +356,11 @@ rapid_collapse_of_society = {
 			}
 		}
 	}
-	
+
 	all_power_cost = 0.33
 	discipline = -0.1
 	land_morale = -0.2
-	
+
 }
 
 ######################################
@@ -416,7 +416,7 @@ counter_revolution = {
 			}
 			revolution_target = {
 				truce_with = ROOT
-			} 
+			}
 		}
 		government = monarchy
 	}
@@ -450,7 +450,7 @@ reaction = {
 		government = monarchy
 		revolution_target = {
 			war_with = ROOT
-		}  
+		}
 
 	}
 
@@ -468,17 +468,17 @@ crusader = {
 		crusade_target = {
 			exists = yes
 		}
-		
+
 	}
 
 	trigger = {
-		
+
 		crusade_target = {
 			war_with = ROOT
 			any_province = {
 				controlled_by = root
 			}
-		}  
+		}
 		land_maintenance = 1.0
 	}
 
@@ -496,12 +496,12 @@ crusader = {
 ######################################
 excommunication = {
 	potential = {
-		religion = catholic	
+		religion = catholic
 	}
 
 	trigger = {
 		is_excommunicated = yes
-		
+
 	}
 
 	prestige = -2
@@ -539,7 +539,7 @@ pentarchy_mod = {
 		379 = { religion = orthodox }
 		358 = { religion = orthodox }
 	}
-	
+
 	prestige = 0.5
 	missionaries = 1
 }
@@ -550,14 +550,16 @@ pentarchy_mod = {
 
 devastation_in_china = {
 	potential = {
-		culture_group = east_asian
-		primary_culture = zhuang
-		primary_culture = yi
-		primary_culture = bai
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
 		has_reform = celestial_empire
 	}
-	
-	trigger = {	
+
+	trigger = {
 		calc_true_if = {
 			all_province = {
 				devastation = 0.05
@@ -583,7 +585,7 @@ prosperity_in_china = {
 		}
 			has_reform = celestial_empire
 	}
-	
+
 	trigger = {
 		calc_true_if = {
 			all_province = {
@@ -621,7 +623,7 @@ civil_war_in_china = {
 				}
 				any_country = {
 					war_with = PREV
-					
+
 					OR = {
 					culture_group = east_asian
 					primary_culture = zhuang
@@ -632,8 +634,8 @@ civil_war_in_china = {
 			}
 
 		}
-	
-	imperial_mandate = -2
+
+	imperial_mandate = -0.1
 }
 
 chinese_reform_1 = {
@@ -644,7 +646,7 @@ chinese_reform_1 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
@@ -663,7 +665,7 @@ chinese_reform_2 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
@@ -683,7 +685,7 @@ chinese_reform_3 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
@@ -702,7 +704,7 @@ chinese_reform_4 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
@@ -721,7 +723,7 @@ chinese_reform_5 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
@@ -741,14 +743,14 @@ the_mandate_of_heaven_0 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
 		}
 	}
-	
-	trigger = {	
+
+	trigger = {
 		NOT = { imperial_mandate = 10 }
 	}
 
@@ -757,6 +759,9 @@ the_mandate_of_heaven_0 = {
 	global_tax_modifier = -0.1
 	global_manpower_modifier = -0.1
 	mercenary_manpower= -0.1
+
+	fire_damage_received = 0.25
+	shock_damage_received = 0.25
 }
 
 the_mandate_of_heaven_10 = {
@@ -767,14 +772,16 @@ the_mandate_of_heaven_10 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
 		}
+		NOT = { imperial_mandate = 20 }
+		imperial_mandate = 10
 	}
-	
-	trigger = {	
+
+	trigger = {
 		NOT = { imperial_mandate = 20 }
 		imperial_mandate = 10
 	}
@@ -784,6 +791,9 @@ the_mandate_of_heaven_10 = {
 	global_tax_modifier = -0.08
 	global_manpower_modifier = -0.08
 	mercenary_manpower= -0.08
+
+	fire_damage_received = 0.2
+	shock_damage_received = 0.2
 }
 
 
@@ -795,14 +805,16 @@ the_mandate_of_heaven_20 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
 		}
+		NOT = { imperial_mandate = 30 }
+		imperial_mandate = 20
 	}
-	
-	trigger = {	
+
+	trigger = {
 		NOT = { imperial_mandate = 30 }
 		imperial_mandate = 20
 	}
@@ -812,6 +824,9 @@ the_mandate_of_heaven_20 = {
 	global_tax_modifier = -0.06
 	global_manpower_modifier = -0.06
 	mercenary_manpower= -0.06
+
+	fire_damage_received = 0.15
+	shock_damage_received = 0.15
 }
 
 the_mandate_of_heaven_30 = {
@@ -822,14 +837,16 @@ the_mandate_of_heaven_30 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
 		}
+		NOT = { imperial_mandate = 40 }
+		imperial_mandate = 30
 	}
-	
-	trigger = {	
+
+	trigger = {
 		NOT = { imperial_mandate = 40 }
 		imperial_mandate = 30
 	}
@@ -839,6 +856,9 @@ the_mandate_of_heaven_30 = {
 	global_tax_modifier = -0.04
 	global_manpower_modifier = -0.04
 	mercenary_manpower= -0.04
+
+	fire_damage_received = 0.1
+	shock_damage_received = 0.1
 }
 
 the_mandate_of_heaven_40 = {
@@ -849,14 +869,16 @@ the_mandate_of_heaven_40 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
 		}
+		NOT = { imperial_mandate = 50 }
+		imperial_mandate = 40
 	}
-	
-	trigger = {	
+
+	trigger = {
 		NOT = { imperial_mandate = 50 }
 		imperial_mandate = 40
 	}
@@ -866,6 +888,9 @@ the_mandate_of_heaven_40 = {
 	global_tax_modifier = -0.02
 	global_manpower_modifier = -0.02
 	mercenary_manpower= -0.02
+
+	fire_damage_received = 0.05
+	shock_damage_received = 0.05
 }
 
 the_mandate_of_heaven_50 = {
@@ -876,14 +901,16 @@ the_mandate_of_heaven_50 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
 		}
+		NOT = { imperial_mandate = 60 }
+		imperial_mandate = 50
 	}
-	
-	trigger = {	
+
+	trigger = {
 		NOT = { imperial_mandate = 60 }
 		imperial_mandate = 50
 	}
@@ -902,14 +929,16 @@ the_mandate_of_heaven_60 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
 		}
+		NOT = { imperial_mandate = 70 }
+		imperial_mandate = 60
 	}
-	
-	trigger = {	
+
+	trigger = {
 		NOT = { imperial_mandate = 70 }
 		imperial_mandate = 60
 	}
@@ -928,14 +957,16 @@ the_mandate_of_heaven_70 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
 		}
+		NOT = { imperial_mandate = 80 }
+		imperial_mandate = 70
 	}
-	
-	trigger = {	
+
+	trigger = {
 		NOT = { imperial_mandate = 80 }
 		imperial_mandate = 70
 	}
@@ -955,14 +986,16 @@ the_mandate_of_heaven_80 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
 		}
+		NOT = { imperial_mandate = 90 }
+		imperial_mandate = 80
 	}
-	
-	trigger = {	
+
+	trigger = {
 		NOT = { imperial_mandate = 90 }
 		imperial_mandate = 80
 	}
@@ -982,14 +1015,14 @@ the_mandate_of_heaven_90 = {
 			primary_culture = yi
 			primary_culture = bai
 		}
-		OR = { 
+		OR = {
 		has_reform = celestial_empire
 		is_subject_of_type = tributary_state
 		has_reform = chinese_plutocratic_reform
 		}
 	}
-	
-	trigger = {	
+
+	trigger = {
 		imperial_mandate = 90
 	}
 
@@ -1020,7 +1053,7 @@ hre_dominant_catholic = {
 		hre_religion = catholic
 		hre_religion_locked = yes
 	}
-	
+
 	legitimacy = 0.25
 	tolerance_own = 1
 	global_missionary_strength = 0.01
@@ -1044,7 +1077,7 @@ hre_dominant_protestant = {
 		hre_religion = protestant
 		hre_religion_locked = yes
 	}
-	
+
 	legitimacy = 0.25
 	tolerance_own = 1
 	global_missionary_strength = 0.01
@@ -1068,7 +1101,7 @@ hre_dominant_reformed = {
 		hre_religion = reformed
 		hre_religion_locked = yes
 	}
-	
+
 	legitimacy = 0.25
 	tolerance_own = 1
 	global_missionary_strength = 0.01

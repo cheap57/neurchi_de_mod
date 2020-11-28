@@ -6,19 +6,19 @@
 
 WUU_ideas = {
 	start = {
-		merc_maintenance_modifier = -0.15
+		merc_maintenance_modifier = -0.25
 		inflation_reduction = 0.05
 	}
-	
+
 	bonus = {
 		discipline = 0.05
-	}	
+	}
 
 	trigger = {
 		tag = WUU
 	}
 	free = yes
-	
+
 	wuu_shrewd_commerce_practise = {
  		global_trade_power = 0.1
   	}
@@ -39,7 +39,7 @@ WUU_ideas = {
 	}
 	wuu_organised_mercenary_recruitment = {
 		mercenary_manpower = 0.5
-		mercenary_discipline = 0.15
+		mercenary_discipline = 0.03
 	}
 }
 CSH_ideas = {
@@ -47,16 +47,16 @@ CSH_ideas = {
 		production_efficiency = 0.1
 		global_manpower_modifier = 0.2
 	}
-	
+
 	bonus = {
 		discipline = 0.05
-	}	
+	}
 
 	trigger = {
 		tag = CSH
 	}
 	free = yes
-	
+
 	csh_manpower_recovery_speed = {
  		manpower_recovery_speed = 0.1
   	}
@@ -85,16 +85,16 @@ YUE_ideas = {
 		movement_speed = 0.15
 		may_perform_slave_raid = yes
 	}
-	
+
 	bonus = {
 		heavy_ship_power = 0.1
-	}	
+	}
 
 	trigger = {
 		tag = YUE
 	}
 	free = yes
-	
+
 	yue_loot = {
  		loot_amount = 0.2
 		available_province_loot = 0.2
@@ -105,6 +105,7 @@ YUE_ideas = {
 	}
 	yue_morale = {
 		naval_morale = 0.1
+		land_morale = 0.1
 	}
 	yue_spy_offence = {
 		spy_offence = 0.15
@@ -114,6 +115,7 @@ YUE_ideas = {
 	}
 	yue_marines = {
 		allowed_marine_fraction = 0.1
+		naval_forcelimit_modifier = 0.3
 	}
 	yue_artillery_fire = {
 		artillery_fire = 1
@@ -122,18 +124,18 @@ YUE_ideas = {
 CYI_ideas = {
 	start = {
 		movement_speed = 0.1
-		global_manpower_modifier = 0.2
+		global_manpower_modifier = 0.3
 	}
-	
+
 	bonus = {
 		discipline = 0.05
-	}	
+	}
 
 	trigger = {
 		tag = CYI
 	}
 	free = yes
-	
+
 	cyi_corruption = {
  		yearly_corruption = -0.05
   	}
@@ -141,10 +143,11 @@ CYI_ideas = {
 		war_taxes_cost_modifier = -0.5
 	}
 	cyi_diplomats = {
-		 	diplomats = 1
+		land_forcelimit_modifier = 0.20
 	}
 	cyi_hostile_attrition = {
 		hostile_attrition = 1
+		defensiveness = 0.10
 	}
 	cyi_same_culture_advisor_cost = {
 		same_culture_advisor_cost = -0.15
@@ -162,17 +165,17 @@ CHI_ideas = {
 		land_forcelimit_modifier = 0.20
 		idea_cost = -0.10
 	}
-	
+
 	bonus = {
 		meritocracy = 1
 		diplomatic_upkeep = 1
 	}
-	
+
 	trigger = {
 		tag = MNG
 	}
 	free = yes		#will be added at load.
-	
+
 	nine_garrisons_of_the_great_wall = {
 		defensiveness = 0.15
 		garrison_size = 0.25
