@@ -1,7 +1,7 @@
 #2230 - Chakansur
 
-owner = SIS
-controller = SIS
+owner = TIM
+controller = TIM
 culture = khorasani
 religion = sunni
 capital = "Chakansur"
@@ -11,8 +11,7 @@ base_tax = 1
 base_production = 1
 base_manpower = 1
 is_city = yes
-add_core = SIS
-add_core = KHO
+add_core = TIM
 discovered_by = muslim
 discovered_by = ottoman
 discovered_by = indian

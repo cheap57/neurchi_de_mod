@@ -1,38 +1,27 @@
-#2100 - Vanni
+#4409 - Trincomale
 
-owner = CEY #owner = JFN
-controller = CEY #controller = JFN
-culture = tamil
-religion = hinduism
-capital = "Yapapatuna"
-trade_goods = gems
+owner = CEY #owner = KND
+controller = CEY #controller = KND
+culture = sinhala
+religion = buddhism
+capital = "Trincomale"
+trade_goods = spices #Cinnamon
 hre = no
-base_tax = 2 
-base_production = 3
+base_tax = 2
+base_production = 2
 base_manpower = 1
 is_city = yes
-add_core = JFN
+add_core = CEY
 discovered_by = muslim
 discovered_by = ottoman
 discovered_by = indian
 discovered_by = chinese
 discovered_by = east_african
+extra_cost = 8
+center_of_trade = 1
 
-
-1411.1.1 = {
-	owner = CEY #owner = CEY
-	controller = CEY #controller = CEY
-}	#Sangamas expelled by Zheng He
-1432.1.1 = {
-	owner = CEY #owner = JFN
-	controller = CEY #controller = JFN
-}	#Reconquest by Vijayanagar
 1505.1.1 = { discovered_by = POR } # Francisco de Almeida
-1619.1.1 = {
-	owner = CEY #owner = POR
-	controller = CEY #controller = POR
-	add_core = POR
-}
+1542.1.1 = { add_core = POR }
 1658.1.1 = {
 	owner = CEY #owner = NED
 	controller = CEY #controller = NED
