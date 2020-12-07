@@ -40,40 +40,7 @@ east_indian_trade_route = {
 
 	trade_efficiency = 0.05
 }
-emergency_state = {
-	potential = {
-		tag = WUU
-		any_state = {
-			has_state_edict = edict_centralization_effort
-		}
-		any_state = {
-			has_state_edict = edict_defensive_edict
-		}
-		any_state = {
-			has_state_edict = edict_encourage_development
-		}
-		#num_of_loans = 2
-		#corruption = 1
-	}
-	trigger = {
-		tag = WUU
-		any_state = {
-			has_state_edict = edict_centralization_effort
-		}
-		any_state = {
-			has_state_edict = edict_defensive_edict
-		}
-		any_state = {
-			has_state_edict = edict_encourage_development
-		}
-		#num_of_loans = 2
-		#corruption = 1
-	}
-	
-	yearly_corruption = -2
-	inflation_action_cost = -0.95
-	interest = -3
-}
+
 #########################################################
 # Coptic control of Alexandria.
 #########################################################
