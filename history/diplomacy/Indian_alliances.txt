@@ -129,12 +129,6 @@ vassal = {
 
 #Vijayanagar
 
-alliance = { #Vijayanagara and the Reddys
-	first = VIJ
-	second = YOR
-	start_date = 1443.1.1
-	end_date = 1448.1.1
-}
 
 #Vassal of Vijayanagara
 vassal = {
@@ -857,13 +851,6 @@ vassal = {
 
 #Telingana
 
-vassal = {
-	first = BAH
-	second = TLG
-	start_date = 1433.1.1 #Defeated by Bahmanis, loses strongholds of Rachakonda and Warangal.
-	end_date = 1452.1.1
-}
-
 #Hyderabad
 
 #Alliance with France
@@ -1369,5 +1356,18 @@ vassal = {
 	first = GBR
 	second = JPR
 	start_date = 1816.1.1
+	end_date = 1946.1.1
+}
+################################ NEURCHI
+vassal = {
+	first = LWA
+	second = GRK
+	start_date = 1444.11.5
+	end_date = 1946.1.1
+}
+vassal = {
+	first = LWA
+	second = KTU
+	start_date = 1444.11.5
 	end_date = 1946.1.1
 }

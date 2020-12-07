@@ -1,7 +1,7 @@
 #2229 - Bust
 
-owner = SIS
-controller = SIS
+owner = TIM
+controller = TIM
 culture = afghani
 religion = sunni
 capital = "Bust"
@@ -11,9 +11,7 @@ base_tax = 1
 base_production = 1
 base_manpower = 3
 is_city = yes
-add_core = SIS
-add_core = AFG
-add_core = KHO
+add_core = TIM
 discovered_by = muslim
 discovered_by = ottoman
 discovered_by = indian

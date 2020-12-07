@@ -125,6 +125,7 @@ chinese_plutocratic_reform = {
 		nobles_influence_modifier = -0.05
 		burghers_influence_modifier = 0.05
 		vaisyas_influence_modifier = 0.05
+		meritocracy = 0.75
 	}
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }

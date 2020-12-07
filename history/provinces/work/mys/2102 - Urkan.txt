@@ -6,7 +6,7 @@ latent_trade_goods = {
 
 owner = MYS #owner = SOL
 controller = MYS #controller = SOL
-add_core = SOL
+add_core = MYS
 culture = evenk
 religion = tengri_pagan_reformed
 capital = "Urkantun"

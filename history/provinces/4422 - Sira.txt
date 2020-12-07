@@ -1,7 +1,7 @@
 #4422 - Sira
 
-owner = BRR #owner = VIJ
-controller = BRR #controller = VIJ
+owner = VIJ #owner = VIJ
+controller = VIJ #controller = VIJ
 culture = kannada
 religion = hinduism
 capital = "Sira"
@@ -12,8 +12,7 @@ base_production = 3
 base_manpower = 3
 is_city = yes
 add_rajputs_or_marathas_or_nobles_effect = yes
-add_core = BRR #VIJ
-add_core = BRR #MYS
+add_core = VIJ
 discovered_by = indian
 discovered_by = muslim
 discovered_by = ottoman
@@ -22,12 +21,12 @@ discovered_by = chinese
 
 1498.1.1 = { discovered_by = POR }
 1638.1.1 = {
-	owner = BRR #owner = BIJ
-	controller = BRR #controller = BIJ
+	owner = VIJ #owner = BIJ
+	controller = VIJ #controller = BIJ
 	remove_core = VIJ
 }
-1685.1.1 = { controller = BRR #controller = MUG } # Conquered by the Mughal emperor Aurangzeb
+1685.1.1 = { controller = VIJ #controller = MUG } # Conquered by the Mughal emperor Aurangzeb
 1686.1.1 = {
-	owner = BRR #owner = MYS	#Beaten by the Mughals and sold to Mysore
-	controller = BRR #controller = MYS
+	owner = VIJ #owner = MYS	#Beaten by the Mughals and sold to Mysore
+	controller = VIJ #controller = MYS
 }
