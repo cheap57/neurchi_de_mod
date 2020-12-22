@@ -1331,7 +1331,7 @@ the_mandate_of_heaven_50 = {
 	global_institution_spread = 0.02
 	meritocracy = 0.2
 	naval_forcelimit_modifier = 0.01
-	land_morale = 0.01
+	land_morale = 0.02
 }
 
 the_mandate_of_heaven_60 = {
@@ -1361,7 +1361,7 @@ the_mandate_of_heaven_60 = {
 	global_institution_spread = 0.04
 	meritocracy = 0.4
 	naval_forcelimit_modifier = 0.03
-	land_morale = 0.03
+	land_morale = 0.04
 }
 
 the_mandate_of_heaven_70 = {
@@ -1392,7 +1392,7 @@ the_mandate_of_heaven_70 = {
 	global_institution_spread = 0.06
 	meritocracy = 0.6
 	naval_forcelimit_modifier = 0.09
-	land_morale = 0.09
+	land_morale = 0.06
 }
 
 the_mandate_of_heaven_80 = {
@@ -1423,7 +1423,7 @@ the_mandate_of_heaven_80 = {
 	global_institution_spread = 0.08
 	meritocracy = 0.8
 	naval_forcelimit_modifier = 0.18
-	land_morale = 0.18
+	land_morale = 0.08
 }
 
 the_mandate_of_heaven_90 = {
@@ -1451,7 +1451,7 @@ the_mandate_of_heaven_90 = {
 	global_institution_spread = 0.1
 	meritocracy = 1
 	naval_forcelimit_modifier = 0.3
-	land_morale = 0.3
+	land_morale = 0.1
 }
 
 ##################################################

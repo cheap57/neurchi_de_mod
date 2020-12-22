@@ -336,7 +336,7 @@ NDiplomacy = {
 	CELESTIAL_EMPIRE_MANDATE_PER_STABILITY = 0.24,	-- Yearly change of Mandate for each point of positive stability
 	CELESTIAL_EMPIRE_MANDATE_PER_STATE_WITH_PROSPERITY = 0, --0.03,	-- Yearly change of Mandate for each State with prosperity.
 	CELESTIAL_EMPIRE_MANDATE_PER_HUNDRED_DEVASTATION = 0, -- -10.0,	-- Yearly change of Mandate for each hundred devastated development (scaled to devastation).
-	CELESTIAL_EMPIRE_MANDATE_PER_HUNDRED_TRIBUTARY_DEV = 0.03,	-- Yearly change of Mandate for each hundred development tributary state.
+	CELESTIAL_EMPIRE_MANDATE_PER_HUNDRED_TRIBUTARY_DEV = 0.1, --0.03, =0.13/mois pour 800 dev tributaire	-- Yearly change of Mandate for each hundred development tributary state.
 	CELESTIAL_EMPIRE_MANDATE_PER_HUNDRED_NONTRIBUTARY_DEV = 0.0,	-- Yearly change of Mandate for each hundred development of neighbouring states that are not the Emperor's tributaries
 	CELESTIAL_EMPIRE_MANDATE_FROM_DEFENDING = 5,	-- How much Mandate is gained when successfully defending the Emperor title.
 	CELESTIAL_EMPIRE_MANDATE_PER_5_LOANS = -0.36,	-- Yearly change of Mandate for every 5 loans.
@@ -446,8 +446,8 @@ NCountry = {
 	CORRUPTION_FROM_BANNERS = 5,
 
 
-	MONARCH_MIN_SKILL = 0,						-- Probably bad idea to reduce this
-	MONARCH_MAX_SKILL = 6,						-- Monarch skills will be chosen between MONARCH_MIN_SKILL and MONARCH_MAX_SKILL
+	MONARCH_MIN_SKILL = 1,						-- Probably bad idea to reduce this
+	MONARCH_MAX_SKILL = 5,						-- Monarch skills will be chosen between MONARCH_MIN_SKILL and MONARCH_MAX_SKILL
 	ELECTIVE_LOCAL_MONARCH_MIN_BONUS = 0,		-- The minimum change that is applied to non-foreign heirs in elective monarchy
 	ELECTIVE_LOCAL_MONARCH_MAX_BONUS = 1,		-- The maximum change that is applied to non-foreign heirs in elective monarchy
 	ELECTIVE_FOREIGN_MONARCH_MIN_BONUS = 0,		-- The minimum change that is applied to foreigns heirs in elective monarchy
