@@ -177,6 +177,7 @@ sea_zone = {
 land_province = {
 	max_attrition = 5						#Maximum Attrition is 5
 	local_manpower_modifier = 0.25			#25% of manpower.
+	ae_impact = 0.01
 }
 
 mild_winter = {
@@ -865,7 +866,6 @@ num_of_marriages = {
 }
 
 num_of_provinces = {
-	
 }
 
 # Multiplied by Development
