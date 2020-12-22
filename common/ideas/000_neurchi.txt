@@ -161,8 +161,8 @@ CYI_ideas = {
 }
 CHI_ideas = {
 	start = {
-		global_manpower_modifier = 0.15
-		land_forcelimit_modifier = 0.15
+		global_manpower_modifier = 0.05
+		land_forcelimit_modifier = 0.05
 		idea_cost = -0.10
 	}
 

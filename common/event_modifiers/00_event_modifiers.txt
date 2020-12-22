@@ -10759,7 +10759,7 @@ estate_dhimmi_lighter_dhimmi_taxes_privilege_mod = {
 }
 
 estate_dhimmi_manpower_mod = {
-	local_manpower_modifier = 0.3
+	local_manpower_modifier = 0.2
 }
 
 estate_maratha_levies_for_muslims_mod = {
