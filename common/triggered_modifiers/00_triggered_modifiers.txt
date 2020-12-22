@@ -1166,8 +1166,9 @@ the_mandate_of_heaven_0 = {
 	global_manpower_modifier = -0.1
 	mercenary_manpower= -0.1
 
-	#fire_damage_received = 0.25
-	shock_damage_received = 0.15
+	fire_damage_received = 0.25
+	shock_damage_received = 0.25
+	global_sailors_modifier = -0.5
 }
 
 the_mandate_of_heaven_10 = {
@@ -1198,8 +1199,9 @@ the_mandate_of_heaven_10 = {
 	global_manpower_modifier = -0.08
 	mercenary_manpower= -0.08
 
-	#fire_damage_received = 0.2
-	shock_damage_received = 0.12
+	fire_damage_received = 0.2
+	shock_damage_received = 0.2
+	global_sailors_modifier = -0.4
 }
 
 
@@ -1231,8 +1233,9 @@ the_mandate_of_heaven_20 = {
 	global_manpower_modifier = -0.06
 	mercenary_manpower= -0.06
 
-	#fire_damage_received = 0.15
-	shock_damage_received = 0.09
+	fire_damage_received = 0.15
+	shock_damage_received = 0.15
+	global_sailors_modifier = -0.3
 }
 
 the_mandate_of_heaven_30 = {
@@ -1263,8 +1266,9 @@ the_mandate_of_heaven_30 = {
 	global_manpower_modifier = -0.04
 	mercenary_manpower= -0.04
 
-	#fire_damage_received = 0.1
-	shock_damage_received = 0.06
+	fire_damage_received = 0.1
+	shock_damage_received = 0.1
+	global_sailors_modifier = -0.2
 }
 
 the_mandate_of_heaven_40 = {
@@ -1295,8 +1299,9 @@ the_mandate_of_heaven_40 = {
 	global_manpower_modifier = -0.02
 	mercenary_manpower= -0.02
 
-	#fire_damage_received = 0.05
-	shock_damage_received = 0.03
+	fire_damage_received = 0.05
+	shock_damage_received = 0.05
+	global_sailors_modifier = -0.1
 }
 
 the_mandate_of_heaven_50 = {
@@ -1325,6 +1330,8 @@ the_mandate_of_heaven_50 = {
 	global_tax_modifier = 0.02
 	global_institution_spread = 0.02
 	meritocracy = 0.2
+	naval_forcelimit_modifier = 0.01
+	land_morale = 0.01
 }
 
 the_mandate_of_heaven_60 = {
@@ -1353,6 +1360,8 @@ the_mandate_of_heaven_60 = {
 	global_tax_modifier = 0.04
 	global_institution_spread = 0.04
 	meritocracy = 0.4
+	naval_forcelimit_modifier = 0.03
+	land_morale = 0.03
 }
 
 the_mandate_of_heaven_70 = {
@@ -1382,6 +1391,8 @@ the_mandate_of_heaven_70 = {
 	war_exhaustion = -0.01
 	global_institution_spread = 0.06
 	meritocracy = 0.6
+	naval_forcelimit_modifier = 0.09
+	land_morale = 0.09
 }
 
 the_mandate_of_heaven_80 = {
@@ -1411,6 +1422,8 @@ the_mandate_of_heaven_80 = {
 	war_exhaustion = -0.02
 	global_institution_spread = 0.08
 	meritocracy = 0.8
+	naval_forcelimit_modifier = 0.18
+	land_morale = 0.18
 }
 
 the_mandate_of_heaven_90 = {
@@ -1437,6 +1450,8 @@ the_mandate_of_heaven_90 = {
 	war_exhaustion = -0.03
 	global_institution_spread = 0.1
 	meritocracy = 1
+	naval_forcelimit_modifier = 0.3
+	land_morale = 0.3
 }
 
 ##################################################
