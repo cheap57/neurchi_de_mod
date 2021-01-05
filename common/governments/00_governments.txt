@@ -88,6 +88,7 @@ monarchy = {
 				two_chamber_reform
 				imperial_decree_reform
 				shun_autocracy_reform
+				militarized_society_reform
 			}
 		}
 		absolute_rule_vs_constitutional = {

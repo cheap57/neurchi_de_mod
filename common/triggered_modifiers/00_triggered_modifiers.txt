@@ -543,7 +543,6 @@ pentarchy_mod = {
 	prestige = 0.5
 	missionaries = 1
 }
-
 ##################################################
 # China modifiers
 ##################################################
@@ -1527,6 +1526,21 @@ hre_dominant_reformed = {
 	tolerance_own = 1
 	global_missionary_strength = 0.01
 	imperial_authority = 0.25
+}
+
+failed_to_win_league_war = {
+potential = {
+		OR = {
+			religion_group = christian
+		}
+	}
+	trigger = {
+		has_country_modifier = joined_league_war
+		hre_heretic_religion = FROM
+		hre_religion_locked = yes
+	}
+	tolerance_own = -3
+	#tolerance_heretic = 1
 }
 
 ######################################

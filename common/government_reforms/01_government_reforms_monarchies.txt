@@ -605,6 +605,50 @@ prussian_monarchy = {
 		militarised_society = yes
 	}
 }
+militarized_society_reform = {
+	icon = "prussian_monarchy"
+	allow_normal_conversion = yes
+	potential = {
+		AND = {
+			is_monarch_leader = yes
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+	}
+	trigger = {
+		mil = 5
+		NOT = { has_reform = letat_cest_moi_reform }
+		NOT = { has_reform = regional_representation_reform }
+		NOT = { has_reform = consulate_reform }
+		NOT = { has_reform = military_electorate_reform }
+				
+		OR = {
+			AND = {
+				is_great_power = no
+				NOT = { any_country = { army_professionalism = root } }
+				army_professionalism = 0.4
+			}
+			estate_influence = {
+				estate = estate_nobles
+				influence = 100
+			}
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 100
+	legacy_equivalent = prussian_monarchy_legacy
+
+	modifiers = {
+		governing_capacity_modifier = -0.5
+	}
+
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+}
 shun_autocracy_reform = {
 	icon = "celestial_empire"
 	allow_normal_conversion = yes
