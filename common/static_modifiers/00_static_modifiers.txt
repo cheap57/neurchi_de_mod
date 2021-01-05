@@ -866,7 +866,6 @@ num_of_marriages = {
 }
 
 num_of_provinces = {
-	ae_impact = 0.001
 }
 
 # Multiplied by Development
