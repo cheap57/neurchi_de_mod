@@ -591,13 +591,14 @@ prussian_monarchy = {
 	legacy_equivalent = prussian_monarchy_legacy
 
 	modifiers = {
-		war_exhaustion = -0.02
-		global_unrest = -2
-		global_autonomy = -0.075
-		max_absolutism = 10
 		monarch_military_power = 3
-		nobles_loyalty_modifier = 0.1
-		governing_capacity_modifier = -0.5
+		#war_exhaustion = -0.02
+		#global_unrest = -2
+		#global_autonomy = -0.075
+		#max_absolutism = 10
+		
+		#nobles_loyalty_modifier = 0.1
+		#governing_capacity_modifier = -0.5
 	}
 
 	conditional = {
@@ -615,34 +616,29 @@ militarized_society_reform = {
 				religion = protestant
 				religion = reformed
 			}
+			mil = 5
+			NOT = { any_country = { army_professionalism = root } }
+			#NOT = { has_reform = letat_cest_moi_reform }
+			#NOT = { has_reform = regional_representation_reform }
+			#NOT = { has_reform = consulate_reform }
+			#NOT = { has_reform = military_electorate_reform }
 		}
 	}
 	trigger = {
-		mil = 5
-		NOT = { has_reform = letat_cest_moi_reform }
-		NOT = { has_reform = regional_representation_reform }
-		NOT = { has_reform = consulate_reform }
-		NOT = { has_reform = military_electorate_reform }
-				
-		OR = {
-			AND = {
-				is_great_power = no
-				NOT = { any_country = { army_professionalism = root } }
-				army_professionalism = 0.4
+		#AND = {
+			#is_great_power = no
+			OR = {
+				army_professionalism = 0.75
+				estate_influence = {
+					estate = estate_nobles
+					influence = 100
+				}
 			}
-			estate_influence = {
-				estate = estate_nobles
-				influence = 100
-			}
-		}
+		#}
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 100
 	legacy_equivalent = prussian_monarchy_legacy
-
-	modifiers = {
-		governing_capacity_modifier = -0.5
-	}
 
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }
@@ -677,13 +673,13 @@ shun_autocracy_reform = {
 	}
 	
 	modifiers = {
-		war_exhaustion = -0.02
-		global_unrest = -2
-		global_autonomy = -0.05 #-0.075
-		max_absolutism = 5 #10
-		monarch_military_power = 1 #3
-		nobles_loyalty_modifier = 0.1
-		governing_capacity_modifier = -0.5
+		#war_exhaustion = -0.02
+		#global_unrest = -2
+		#global_autonomy = -0.05 #-0.075
+		#max_absolutism = 5 #10
+		monarch_military_power = 1 #3 en Prusse
+		#nobles_loyalty_modifier = 0.1
+		#governing_capacity_modifier = -0.5
 	}
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }
