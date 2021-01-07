@@ -610,6 +610,7 @@ militarized_society_reform = {
 	icon = "prussian_monarchy"
 	allow_normal_conversion = yes
 	potential = {
+	OR = {
 		AND = {
 			is_monarch_leader = yes
 			OR = {
@@ -623,6 +624,8 @@ militarized_society_reform = {
 			#NOT = { has_reform = consulate_reform }
 			#NOT = { has_reform = military_electorate_reform }
 		}
+		has_reform = militarized_society_reform
+		}
 	}
 	trigger = {
 		#AND = {
@@ -633,6 +636,7 @@ militarized_society_reform = {
 					estate = estate_nobles
 					influence = 100
 				}
+				has_reform = militarized_society_reform
 			}
 		#}
 	}
