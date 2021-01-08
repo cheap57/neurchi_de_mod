@@ -659,7 +659,7 @@ new_world_i = {
 	
 	
 	can_embrace = {
-		always = yes
+		owner = { has_institution = renaissance }
 	}
 
 
@@ -896,6 +896,7 @@ printing_press = {
 	
 	can_start = {
 		is_year = 1550
+		continent = europe
 		is_in_capital_area = yes
 		is_island = no
 		is_state = yes
@@ -919,7 +920,7 @@ printing_press = {
 	
 	
 	can_embrace = {
-		always = yes
+		owner = { has_institution = new_world_i }
 	}
 
 	
@@ -1244,6 +1245,7 @@ global_trade = {
 	can_start = {
 		is_year = 1600
 		is_island = no
+		continent = europe
 		highest_value_trade_node = yes
 		OR = {
 			province_has_center_of_trade_of_level = 3
@@ -1269,7 +1271,7 @@ global_trade = {
 	
 	
 	can_embrace = {
-		always = yes
+		owner = { has_institution = printing_press }
 	}
 
 	
@@ -1549,11 +1551,12 @@ manufactories = {
 	}
 	
 	can_start = {
+		continent = europe
 		is_year = 1650
 		is_in_capital_area = yes
 		is_island = no
 		is_state = yes
-		development = 20
+		development = 30
 		printing_press = 100
 		global_trade = 100
 		custom_trigger_tooltip = {
@@ -1581,7 +1584,7 @@ manufactories = {
 	
 	
 	can_embrace = {
-		always = yes
+		owner = { has_institution = global_trade }
 	}
 
 	
@@ -2041,6 +2044,8 @@ enlightenment = {
 		printing_press = 100
 		global_trade = 100
 		development = 30
+		continent = europe
+		
 		OR = {
 			custom_trigger_tooltip = {
 				tooltip = tooltip_has_seat_in_parliament
@@ -2063,9 +2068,8 @@ enlightenment = {
 	
 	on_start = institution_events.7
 	
-	
 	can_embrace = {
-		always = yes
+		owner = { has_institution = manufactories }
 	}
 
 	
@@ -2394,6 +2398,8 @@ industrialization = {
 		development = 30
 		manufactories = 100
 		enlightenment = 100
+		continent = europe
+		
 		if = {
 			limit = {
 				has_dlc = "Rule Britannia"
@@ -2448,9 +2454,8 @@ industrialization = {
 	
 	on_start = institution_events.80
 	
-	
 	can_embrace = {
-		always = yes
+		owner = { has_institution = enlightenment }
 	}
 
 	
