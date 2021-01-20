@@ -547,7 +547,324 @@ pentarchy_mod = {
 # China modifiers
 ##################################################
 
+abandoned_chinese_1 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					owner = {
+						NOT = {
+							culture_group = east_asian
+							primary_culture = zhuang
+							primary_culture = yi
+							has_reform = celestial_empire
+						}
+					}
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 12
+			}
+		}
+	}
 
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 6
+		}
+	}
+	imperial_mandate = -0.01
+}
+abandoned_chinese_2 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 12
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					owner = {
+						NOT = {
+							culture_group = east_asian
+							primary_culture = zhuang
+							primary_culture = yi
+							has_reform = celestial_empire
+						}
+					}
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 18
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 12
+		}
+	}
+	imperial_mandate = -0.02
+}
+abandoned_chinese_3 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 18
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					owner = {
+						NOT = {
+							culture_group = east_asian
+							primary_culture = zhuang
+							primary_culture = yi
+							has_reform = celestial_empire
+						}
+					}
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 24
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 18
+		}
+	}
+	imperial_mandate = -0.04
+}
+abandoned_chinese_4 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 24
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					owner = {
+						NOT = {
+							culture_group = east_asian
+							primary_culture = zhuang
+							primary_culture = yi
+							has_reform = celestial_empire
+						}
+					}
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 30
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 24
+		}
+	}
+	imperial_mandate = -0.06
+}
+
+abandoned_chinese_5 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 30
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 30
+		}
+	}
+	imperial_mandate = -0.1
+}
 
 devastation_in_china_1 = {
 	potential = {

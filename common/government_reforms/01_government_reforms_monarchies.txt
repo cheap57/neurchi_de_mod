@@ -610,22 +610,22 @@ militarized_society_reform = {
 	icon = "prussian_monarchy"
 	allow_normal_conversion = yes
 	potential = {
-	OR = {
-		AND = {
-			is_monarch_leader = yes
-			OR = {
-				religion = protestant
-				religion = reformed
+		OR = {
+			AND = {
+				is_monarch_leader = yes
+				OR = {
+					religion = protestant
+					religion = reformed
+				}
+				mil = 5
+				NOT = { any_country = { army_professionalism = root } }
+				#NOT = { has_reform = letat_cest_moi_reform }
+				#NOT = { has_reform = regional_representation_reform }
+				#NOT = { has_reform = consulate_reform }
+				#NOT = { has_reform = military_electorate_reform }
 			}
-			mil = 5
-			NOT = { any_country = { army_professionalism = root } }
-			#NOT = { has_reform = letat_cest_moi_reform }
-			#NOT = { has_reform = regional_representation_reform }
-			#NOT = { has_reform = consulate_reform }
-			#NOT = { has_reform = military_electorate_reform }
-		}
-		has_reform = militarized_society_reform
-		}
+			has_reform = militarized_society_reform
+			}
 	}
 	trigger = {
 		#AND = {

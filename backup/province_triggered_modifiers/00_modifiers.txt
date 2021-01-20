@@ -30,7 +30,41 @@ test_modifier = {
 	}
 	
 }
+unlegtimate_ruler = {
+	potential = {
+		always = yes
+	}
 
+	trigger = {
+		owner = {
+			NOT = {
+				culture_group = east_asian
+				primary_culture = zhuang
+				primary_culture = yi
+				has_reform = celestial_empire
+			}
+		}
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+		}
+	}
+
+	#local_build_cost = 0.05	
+	local_unrest = -4
+	#imperial_mandate = -0.01
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+	
+}
 non_catholic_rome = {
 	potential = {
 		normal_or_historical_nations = yes
