@@ -18,7 +18,7 @@ feudalism = {
 	penalty = 1 #0.5
 	bonus = {
 		free_leader_pool = 1
-		global_institution_spread = -0.5 #uniquement pour solo grand campaign
+		#global_institution_spread = -0.5 #uniquement pour solo grand campaign
 	}
 
 	trade_company_efficiency = 0.2
