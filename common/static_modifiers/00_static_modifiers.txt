@@ -1185,8 +1185,8 @@ absolutism = {
 }
 
 low_army_professionalism = {
-	mercenary_cost = -0.15
-	mercenary_manpower = 0.15
+	mercenary_cost = -0.25
+	mercenary_manpower = 0.25
 	monthly_militarized_society = -0.05
 }
 

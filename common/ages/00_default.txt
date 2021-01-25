@@ -215,6 +215,7 @@ age_of_discovery = {
 		
 			allow = {
 				OR = {
+					tag = DAN
 					influence_ideas = 7
 					diplomatic_ideas = 7
 				}
@@ -237,10 +238,14 @@ age_of_discovery = {
 		ab_venice_ship_trade = {
 		
 			allow = {
-				num_of_galley = VEN
-				navy_size_percentage = 0.90
-				galley_fraction = 0.5
-				
+				OR = {
+					tag = VEN
+					AND = {
+						num_of_galley = VEN
+						navy_size_percentage = 0.90
+						galley_fraction = 0.5
+					}
+				}
 			}
 			modifier = {
 				global_ship_trade_power = 0.5
@@ -403,10 +408,12 @@ age_of_reformation = {
 	
 		ab_spain_tercio = {
 			allow = {
-				religious_unity = 0.95
 				OR = {
 					tag = SPA
-					religious_ideas = 7
+					AND = {
+						religious_ideas = 7
+						religious_unity = 0.95
+					}
 				}
 			}
 			modifier = {
@@ -418,8 +425,13 @@ age_of_reformation = {
 		}
 		ab_mughal_artillery = {
 			allow = {
-				artillery_fraction = 0.5
-				army_size_percentage = 0.8
+				OR = {
+					tag = MUG
+					AND = {
+						artillery_fraction = 0.5
+						army_size_percentage = 0.8
+					}
+				}
 			}
 			modifier = {
 				artillery_cost = -0.5
@@ -432,11 +444,13 @@ age_of_reformation = {
 		ab_polish_legitimacy = {
 			allow = {
 				OR = {
-					production_income_percentage = 0.5
+					AND = {
+						production_income_percentage = 0.5
+						NOT = { num_of_merchants = 3 }
+					}
 					tag = PLC
 					tag = POL
 				}
-				NOT = { num_of_merchants = 4 }
 			}
 			modifier = {
 				global_trade_goods_size_modifier = 0.33
@@ -448,7 +462,10 @@ age_of_reformation = {
 		
 		ab_persia_reinforce = {
 			allow = {
-				army_size_percentage = 1.5
+				OR = {
+					tag = PER
+					NOT = { quality_ideas = 1 }
+				}
 			}
 			modifier = {
 				reinforce_cost_modifier = -0.3
@@ -594,7 +611,10 @@ age_of_absolutism = {
 	
 		ab_france_fire_damage = {
 			allow = {
-				absolutism = 80
+				OR = {
+					TAG = FRA
+					absolutism = 90
+				}
 			}
 			modifier = {
 				fire_damage = 0.2
@@ -605,7 +625,10 @@ age_of_absolutism = {
 		}
 		ab_dutch_anti_corruption = {
 			allow = {
-				mercantilism = 75
+			OR = {
+				tag = NED
+				mercantilism = 100
+				}
 			}
 			modifier = {
 				yearly_corruption = -0.2
@@ -616,7 +639,10 @@ age_of_absolutism = {
 		}	
 		ab_sweden_manpower = {
 			allow = {
-				NOT = { max_manpower = 200 }
+				OR = {
+					tag = SWE
+					NOT = { max_manpower = 200 }
+				}
 			}
 			modifier = {
 				manpower_recovery_speed = 0.35
@@ -631,16 +657,17 @@ age_of_absolutism = {
 				OR = {
 					estate_loyalty = {
 						estate = estate_cossacks
-						loyalty = 60
+						loyalty = 80
 					}
 					estate_loyalty = {
 						estate = estate_rajput
-						loyalty = 60
+						loyalty = 80
 					}
 					estate_loyalty = {
 						estate = estate_maratha
-						loyalty = 60
+						loyalty = 80
 					}
+					tag = MCH
 				}
 			}
 			modifier = {
@@ -798,8 +825,8 @@ age_of_revolutions = {
 				OR = {
 					aristocracy_ideas = 7
 					tag = PRU
+					#quality_ideas = 7
 				}
-				quality_ideas = 7
 			}
 			modifier = {
 				fire_damage_received = -0.2
@@ -812,6 +839,7 @@ age_of_revolutions = {
 			allow = {
 				navy_size = GBR
 				navy_size = ENG
+				navy_size = 100
 			}
 			modifier = {
 				naval_maintenance_modifier = -0.33
@@ -822,7 +850,10 @@ age_of_revolutions = {
 		}
 		ab_russia_boost = {
 			allow = {
+			OR = {
+				tag = RUS
 				num_of_provinces_in_territories = 50
+				}
 			}
 			modifier = {
 				governing_capacity_modifier = 0.33

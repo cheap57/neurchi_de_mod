@@ -24,7 +24,7 @@ aristocracy_ideas = {
 	}
 	
 	noble_knights = {
-		cavalry_power = 0.10
+		cavalry_power = 0.15
 		cavalry_cost = -0.10
 	}
 	military_traditions = {
@@ -46,7 +46,7 @@ aristocracy_ideas = {
 		free_leader_pool = 1
 	}
 	noble_resilience = {
-		mercenary_manpower = 0.20
+		mercenary_manpower = 0.5
 	}
 	
 
@@ -426,7 +426,7 @@ economic_ideas = {
 		global_tax_modifier = 0.10
 	}
 	organised_construction = {
-		build_cost = -0.1
+		state_maintenance_modifier = -0.25
 	}
 	national_bank = {
 		inflation_reduction = 0.1
@@ -725,11 +725,11 @@ quality_ideas = {
 	category = MIL
 
 	bonus = {
-		discipline = 0.05
+		discipline = 0.035
 	}
 
 	private_to_marshal = {
-		infantry_power = 0.1
+		infantry_power = 0.75
 	}
 	quality_education = {
 		army_tradition = 0.5
@@ -760,10 +760,10 @@ quantity_ideas = {
 	category = MIL
 
 	bonus = {
-		land_forcelimit_modifier  = 0.50
+		land_forcelimit_modifier  = 0.33
 	}
 	mass_army = {
-		global_manpower_modifier = 0.50
+		global_manpower_modifier = 0.33
 	}
 	the_young_can_serve = {
 		manpower_recovery_speed = 0.20
