@@ -1495,6 +1495,7 @@ papal_indulgence = {
 
 usury_forgiven = {
 	interest = -0.25
+	discipline = 0.05
 	inflation_reduction = 0.1
 	religion = yes
 }

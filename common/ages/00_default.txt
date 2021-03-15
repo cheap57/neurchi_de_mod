@@ -823,7 +823,10 @@ age_of_revolutions = {
 		ab_pru_military = {
 			allow = {
 				OR = {
-					aristocracy_ideas = 7
+					AND = {
+						aristocracy_ideas = 7
+						absolutism = 80
+					}
 					tag = PRU
 					#quality_ideas = 7
 				}
