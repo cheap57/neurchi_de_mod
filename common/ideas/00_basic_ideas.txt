@@ -733,7 +733,7 @@ quality_ideas = { # Minor change ambition
 	category = MIL
 
 	bonus = {
-		discipline = yearly_army_professionalism = 0.01
+		yearly_army_professionalism = 0.01
 	}
 
 	private_to_marshal = {
