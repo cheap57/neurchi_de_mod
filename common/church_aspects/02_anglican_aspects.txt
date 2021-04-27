@@ -1,6 +1,6 @@
-divorce_consort_aspect = { #virer le successeur
+divorce_consort_aspect = {
 	sprite = "GFX_divorce_consort_icon"
-	cost = 200
+	cost = 100
 	potential = {
 		has_dlc = "Rights of Man"
 		government = monarchy
@@ -9,36 +9,38 @@ divorce_consort_aspect = { #virer le successeur
 		NOT = { has_reform = ottoman_government }
 	}
 	trigger = {
-		has_heir = yes
-		prestige = -75
+		has_consort = yes
+		is_female = no
+		has_heir = no
+		is_lesser_in_union = no
+		has_regency = no
 	}
 	effect = {
 		custom_tooltip = divorce_consort_tooltip
 		hidden_effect = {
-			 remove_heir = yes
-		}
-		add_prestige = -25
+			remove_consort = yes
+		}		
 	}
 	ai_will_do = {
 		factor = 2
 		modifier = {
 			factor = 0
 			NOT = {
-				ruler_has_personality = infertile_personality
+				consort_has_personality = infertile_personality
 			}
 		}
 		modifier = {
 			factor = 0
 			OR = {
-				heir_adm = 3
-				heir_dip = 3
-				heir_mil = 3
+				consort_adm = 2
+				consort_dip = 2
+				consort_mil = 2
 			}
 		}
 	}
 }
 
-gain_consort_aspect = { #envoyer le mayflower encore et encore
+gain_consort_aspect = {
 	sprite = "GFX_marry_local_suitor_icon"
 	cost = 100
 	potential = {
@@ -49,14 +51,16 @@ gain_consort_aspect = { #envoyer le mayflower encore et encore
 		NOT = { has_reform = ottoman_government }
 	}
 	trigger = {
-		num_of_colonies = 1
+		has_consort = no
+		is_female = no
+		is_lesser_in_union = no
+		has_regency = no
 	}
 	effect = {
-		every_owned_province  = {
-			limit = {
-				is_colony = yes
-			}
-			add_colonysize = 50
+		define_consort = {
+			country_of_origin = ROOT
+			hide_skills = yes
+			female = yes
 		}
 	}
 	ai_will_do = {
@@ -72,16 +76,16 @@ gain_consort_aspect = { #envoyer le mayflower encore et encore
 	}
 }
 
-dissolve_monasteries_aspect = { #drafter des paysans
+dissolve_monasteries_aspect = {
 	sprite = "GFX_dissolve_monasteries_icon"
 	cost = 100
 	trigger = {
 		NOT = {
-			manpower_percentage = 1
+			treasury = 1000000
 		}
 	}
 	effect = {
-		add_yearly_manpower = 0.5
+		add_years_of_income = 0.25
 	}
 	ai_will_do = {
 		factor = 1

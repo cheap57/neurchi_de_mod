@@ -3,19 +3,6 @@ establish_gaituguiliu_decision = {
 	emperor = {
 		meritocracy = 0.5
 	}
-	every_country = {
-		limit = {
-			OR = {
-				capital_trade_node = 4233
-				capital_trade_node = 700
-				capital_trade_node = 679
-				capital_trade_node = 684
-				capital_trade_node = 1371
-			}
-			culture_group = chinese
-		}
-		meritocracy = 0.5
-	}
 }
 
 seaban_decision = {
