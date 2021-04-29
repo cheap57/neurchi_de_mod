@@ -205,6 +205,7 @@ NDiplomacy = {
 	AE_SAME_OVERLORD = 0.5,
 	AE_PROVINCE_CAP = 30,				-- Province development above this will not count for AE (also used for warscore cost cap)
 	AE_THREATEN_WAR = 1.0,
+	AE_PRIMITIVES = -0.75, -- less AE from primitives
 
 	-- Peace Option Effects, base values for the winner. The loser gets the inverse.
 	PO_DEMAND_PROVINCES_AE = 0.75, 				-- _DDEF_PO_DEMAND_PROVINCES_AE = 10, (Per development)
@@ -248,6 +249,7 @@ NDiplomacy = {
 	PO_WAR_REPARATIONS_PRESTIGE = 2,
 	PO_END_RIVALRY_PRESTIGE = 5,
 
+	PEACE_COST_PRIMITIVE_NERF = 0.75,				-- war score cost multiplier vs primitives
 	PEACE_COST_DEMAND_PROVINCE = 1,					-- Demand a province (scales by province wealth, also used for annex)
 	PEACE_COST_CONCEDE_PROVINCE = 1,				-- Demand colonial area province concession.
 	PEACE_COST_JOIN_EMPIRE = 0.5,
@@ -637,9 +639,9 @@ NCountry = {
 	GREAT_PROJECT_DEGRADATION_PERCENT_THRESHOLD_FOR_TIER_1 = 25, --state of repair threshold for tier 1 benefits
 	GREAT_PROJECT_DEGRADATION_PERCENT_THRESHOLD_FOR_TIER_2 = 50, --state of repair threshold for tier 2 benefits
 	GREAT_PROJECT_DEGRADATION_PERCENT_THRESHOLD_FOR_TIER_3 = 75, --state of repair threshold for tier 3 benefits
-	GREAT_PROJECT_MANPOWER_REQUIRED_FOR_CONSTRUCTION_BOOST = 10000, --use a bunch of manpower to move things on
+	GREAT_PROJECT_MANPOWER_REQUIRED_FOR_CONSTRUCTION_BOOST = 5000, --use a bunch of manpower to move things on
 	GREAT_PROJECT_MANPOWER_CONSTRUCTION_BOOST_AMOUNT_IN_DAYS = 730, --how far throwing men at the problem gets you
-	GREAT_PROJECT_MONEY_REQUIRED_FOR_CONSTRUCTION_BOOST = 300, --use a bunch of money to move things on
+	GREAT_PROJECT_MONEY_REQUIRED_FOR_CONSTRUCTION_BOOST = 250, --use a bunch of money to move things on
 	GREAT_PROJECT_MONEY_CONSTRUCTION_BOOST_AMOUNT_IN_DAYS = 730, --how far throwing cash at the problem gets you
 	GREAT_PROJECT_MOVE_COST_PER_DAY = 3, --how much to move a great project for one day
 	COUNTRIES_GETTING_SCORE = 10,
@@ -1015,7 +1017,7 @@ NCountry = {
 	REVOLUTION_CLAIM_MIN_ZEAL = 20.0,		-- Minimum Revolutionary Zeal required for contestant to claim the revolution target
 	REVOLUTION_CLAIM_COOLDOWN = 12,			-- How many months until it can be stolen again
 	TRIBE_STARTING_DEV = 3,							-- Starting dev of a tribe
-	MIGRATORY_TRIBE_DEVASTATION_BURN = 1.0,			-- How much devastation is burnt per month, multiplied with development. 
+	MIGRATORY_TRIBE_DEVASTATION_BURN = 0.8,			-- How much devastation is burnt per year, multiplied with development. 
 	MIGRATORY_TRIBE_DEVASTATION_ALERT_THRESHOLD = 80,
 	MIGRATORY_TRIBE_DEVELOPMENT_PROGRESS = 0.02, 	-- How much progress on development for each monthly tick
 	MIGRATORY_TRIBE_DEVELOPMENT_OTHER_BONUS = 0.08,	-- Bonus progress gained on development from burning someone else province.
@@ -1027,12 +1029,26 @@ NCountry = {
 	TRIBE_SETTLE_DIP_COST = 50,
 	TRIBE_SETTLE_MIL_COST = 0,
 
-	COHESION_FEDERATION_MEMBER_WRONG_CULTURE = -0.1,
-	COHESION_FEDERATION_MEMBER_CORRECT_CULTURE = 0.2,
-	COHESION_FEDERATION_MEMBER_STRONGER = -0.5,
+	COHESION_FEDERATION_MEMBER_WRONG_CULTURE = 0.05,
+	COHESION_FEDERATION_MEMBER_CORRECT_CULTURE = 0.10,
+	COHESION_FEDERATION_MEMBER_STRONGER = -0.20,
+	COHESION_FEDERATION_MEMBER_STRONGER_WRONG_CULTURE = -0.40,
+	COHESION_FEDERATION_SAME_CULTURE_MEMBERS_BONUS_NUMBER = 3,
+	COHESION_FEDERATION_SAME_CULTURE_MEMBERS_BONUS_MODIFIER = 1,
 	COHESION_NEIGHBOURING_COLONIZER = 0.5,
-	COHESION_FEDERATION_ADVANCEMENT = -0.1,
-
+	COHESION_FEDERATION_ADVANCEMENT = -0.05,
+	FEDERATION_DESIRABILITY_WRONG_CULTURE_GROUP = -100,
+	FEDERATION_DESIRABILITY_SAME_CULTURE = 100,
+	FEDERATION_DESIRABILITY_SAME_CULTURE_GROUP = -20,
+	FEDERATION_DESIRABILITY_LAND_BALANCE_MULTIPLIER = 20,
+	FEDERATION_DESIRABILITY_STRONGER_THAN_LEADER_MALUS = -100,
+	FEDERATION_DESIRABILITY_WANTS_ALLY = 20,
+	FEDERATION_DESIRABILITY_WANTS_BEFRIEND = 20,
+	FEDERATION_DESIRABILITY_WANTS_ANTAGONIZE = -40,
+	FEDERATION_DESIRABILITY_WANTS_WEAKEN = -10,
+	FEDERATION_DESIRABILITY_DONT_WANT_TO_CHANGE = -10,
+	FEDERATION_ACTION_COOLDOWN = 5,
+	
 	FEDERATION_ADVANCEMENT_COHESION_REQUIREMENT = 100.0,
 	FEDERATION_ADVANCEMENT_COHESION_COST = 80.0,
 
@@ -1181,7 +1197,7 @@ NMilitary = {
 	REVANCHISM_DEVASTATION_IMPACT = -0.02,			-- 100 revanschism is -2 a year.
 	SURRENDER_DEVASTATION_IMPACT = -3.4,
 	CONTROL_DEVASTATION_IMPACT = -1,				-- devastation recovery given by control
-	PASSIVE_DEVASTATION_IMPACT = -1,				-- devastation recovery given passively if the provice is not owned by anyone
+	PASSIVE_DEVASTATION_IMPACT = -10,				-- devastation recovery given passively if the provice is not owned by anyone
 
 	DEVASTATION_DEVELOPMENT_SCALE = 5,
 
@@ -1529,7 +1545,9 @@ NAI = {
 	POWERFUL_ALLY_PENALTY = 50,	-- Penalty on alliance for them already having a powerful ally if much stronger
 	RIVAL_ALLIANCE_PENALTY = 50, -- Penalty on alliance chance for being allied to rivals
 	REVOLUTION_EMBRACE_MAX_ABSOLUTISM = 49, -- AI will not consider embracing the revolution (unless a disaster happens) if their absolutism if over this value
-
+	BASE_CAN_MAKE_CORE_DESIRE_TO_RETURN_PROVINCE = 10, --score to add to desire to keep province rather than returning it to someone or creating a trading city if you can core it straight away
+	BASE_CAN_MAKE_CORE_IN_AREA_DESIRE_TO_RETURN_PROVINCE = 8, --score to add to desire to keep province rather than returning it to someone or creating a trading city if you can core it soon
+	
 	DEBASE_THRESHOLD = 10000,-- AI will not debase if it has more gold than this.
 
 	DEVELOPMENT_CAP_BASE = 10,	-- AI will not develop provinces that have more development than this or DEVELOPMENT_CAP_MULT*original development (whichever is bigger)
@@ -1707,6 +1725,7 @@ NAI = {
 	DIPLOMATIC_ACTION_SHAREMAP_REGION_SELF_VALUE_MULT = 1.5, -- AI scoring for sharing maps based on "interests in region" for map sharing.
 	DIPLOMATIC_ACTION_SHAREMAP_PRESTIGE_FACTOR = 0.5, --AI scoring for sharing maps factor for current prestige.
 	DIPLOMATIC_ACTION_FEDERATION_ACCEPTANCE_MULT = 3.0, -- AI scoring for alliance based on willingness to accept it if offered to them
+	DIPLOMATIC_ACTION_FEDERATION_ACCEPTANCE_INERTIA = 10, --new score must be at least this much better that current federation's score to move
 	DIPLOMATIC_ACTION_ROYAL_MARRIAGE_ACCEPTANCE_MULT = 2.0, -- AI scoring for royal marriage based on their willingness to accept it if offered to them
 	DIPLOMATIC_ACTION_ROYAL_MARRIAGE_NO_POWER_COST_RELATION_MULT = 0.25, -- AI scoring for royal marriage is multiplied by this if they currently lack a relation with a power cost
 	DIPLOMATIC_ACTION_IMPROVE_RELATIONS_BEFRIEND_FACTOR = 50, -- AI scoring for improve relations is increased by this if they have an attitude with 'befriend' desire
@@ -1876,7 +1895,7 @@ NAI = {
 	ESTATE_MAX_WANTED_INFLUENCE = 73.0,
 	ESTATE_MIN_WANTED_CROWNLAND = 33.0,
 	ESTATE_MAX_PRIVILEDGES = 2,
-
+	MIN_SCORE_TO_CONCENTRATE_DEVELOPMENT = 1.5,
 },
 
 NAIEconomy = {
@@ -2062,6 +2081,8 @@ NGraphics = {
 	SHOW_TRADE_MODIFIERS_IN_TRADE_MAP_MODE = 1,		-- 1 = true, 0 = false
 	END_OF_COMBAT_GFX = 1,
 	MAX_MAPMODE_COLOR_UPDATE_DELAY_MS = 200,
+
+	MAX_ARMY_SPRITE_LEVEL_IN_NATION_DESIGNER = 4,
 },
 
 NGui = {
