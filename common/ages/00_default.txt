@@ -180,7 +180,13 @@ age_of_discovery = {
 		
 		ab_ottoman_siege_ability = {
 			allow = {
-				tag = TUR
+				OR = {
+					tag = TUR
+					AND = {
+						num_of_artillery = TUR
+						num_of_artillery = 16
+					}
+				}
 			}
 			modifier = {
 				siege_ability = 0.33
@@ -193,7 +199,10 @@ age_of_discovery = {
 		ab_portugal_colonial_growth = {
 		
 			allow = {
+			OR = {
+				exploration_ideas = 7
 				tag = POR
+				}
 			}
 			modifier = {
 				global_colonial_growth = 50
@@ -205,10 +214,14 @@ age_of_discovery = {
 		ab_denmark_reduced_lib_desire = {
 		
 			allow = {
-				tag = DAN
+				OR = {
+					tag = DAN
+					influence_ideas = 7
+					diplomatic_ideas = 7
+				}
 			}
 			modifier = {
-				reduced_liberty_desire = 30
+				vassal_forcelimit_bonus = 0.5
 			}
 			ai_will_do = {
 				factor = 100
@@ -216,7 +229,7 @@ age_of_discovery = {
 					factor = 0
 					NOT = {
 						any_subject_country = {
-							liberty_desire = 20
+							liberty_desire = 40
 						}
 					}
 				}
@@ -225,7 +238,14 @@ age_of_discovery = {
 		ab_venice_ship_trade = {
 		
 			allow = {
-				tag = VEN
+				OR = {
+					tag = VEN
+					AND = {
+						num_of_galley = VEN
+						navy_size_percentage = 0.90
+						galley_fraction = 0.5
+					}
+				}
 			}
 			modifier = {
 				global_ship_trade_power = 0.5
@@ -287,10 +307,6 @@ age_of_reformation = {
 			OR = {
 				trading_bonus = {
 					trade_goods = spices
-					value = yes
-				}
-				trading_bonus = {
-					trade_goods = cloves
 					value = yes
 				}
 				trading_bonus = {
@@ -392,7 +408,13 @@ age_of_reformation = {
 	
 		ab_spain_tercio = {
 			allow = {
-				tag = SPA
+				OR = {
+					tag = SPA
+					AND = {
+						religious_ideas = 7
+						religious_unity = 0.95
+					}
+				}
 			}
 			modifier = {
 				shock_damage_received = -0.3
@@ -403,7 +425,13 @@ age_of_reformation = {
 		}
 		ab_mughal_artillery = {
 			allow = {
-				tag = MUG
+				OR = {
+					tag = MUG
+					AND = {
+						artillery_fraction = 0.5
+						army_size_percentage = 0.8
+					}
+				}
 			}
 			modifier = {
 				artillery_cost = -0.5
@@ -416,6 +444,10 @@ age_of_reformation = {
 		ab_polish_legitimacy = {
 			allow = {
 				OR = {
+					AND = {
+						production_income_percentage = 0.5
+						NOT = { num_of_merchants = 3 }
+					}
 					tag = PLC
 					tag = POL
 				}
@@ -430,7 +462,10 @@ age_of_reformation = {
 		
 		ab_persia_reinforce = {
 			allow = {
-				tag = PER
+				OR = {
+					tag = PER
+					NOT = { quality_ideas = 1 }
+				}
 			}
 			modifier = {
 				reinforce_cost_modifier = -0.3
@@ -440,17 +475,8 @@ age_of_reformation = {
 			}
 		}
 	
-	}
-	
-	
-	
-
-	
+	}	
 }
-
-
-
-
 age_of_absolutism = {
 	start = 1620
 	
@@ -585,7 +611,10 @@ age_of_absolutism = {
 	
 		ab_france_fire_damage = {
 			allow = {
-				tag = FRA
+				OR = {
+					TAG = FRA
+					absolutism = 90
+				}
 			}
 			modifier = {
 				fire_damage = 0.2
@@ -596,7 +625,10 @@ age_of_absolutism = {
 		}
 		ab_dutch_anti_corruption = {
 			allow = {
+			OR = {
 				tag = NED
+				mercantilism = 100
+				}
 			}
 			modifier = {
 				yearly_corruption = -0.2
@@ -607,7 +639,10 @@ age_of_absolutism = {
 		}	
 		ab_sweden_manpower = {
 			allow = {
-				tag = SWE
+				OR = {
+					tag = SWE
+					NOT = { max_manpower = 200 }
+				}
 			}
 			modifier = {
 				manpower_recovery_speed = 0.35
@@ -620,12 +655,23 @@ age_of_absolutism = {
 		ab_manchu_banner = {
 			allow = {
 				OR = {
+					estate_loyalty = {
+						estate = estate_cossacks
+						loyalty = 80
+					}
+					estate_loyalty = {
+						estate = estate_rajput
+						loyalty = 80
+					}
+					estate_loyalty = {
+						estate = estate_maratha
+						loyalty = 80
+					}
 					tag = MCH
-					tag = QNG
 				}
 			}
 			modifier = {
-				amount_of_banners = 0.5
+				special_unit_forcelimit = 0.1
 			}
 			ai_will_do = {
 				factor = 100
@@ -776,7 +822,14 @@ age_of_revolutions = {
 		}
 		ab_pru_military = {
 			allow = {
-				tag = PRU
+				OR = {
+					AND = {
+						aristocracy_ideas = 7
+						absolutism = 80
+					}
+					tag = PRU
+					#quality_ideas = 7
+				}
 			}
 			modifier = {
 				fire_damage_received = -0.2
@@ -787,7 +840,9 @@ age_of_revolutions = {
 		}
 		ab_gbr_fleet = {
 			allow = {
-				tag = GBR
+				navy_size = GBR
+				navy_size = ENG
+				navy_size = 100
 			}
 			modifier = {
 				naval_maintenance_modifier = -0.33
@@ -798,7 +853,10 @@ age_of_revolutions = {
 		}
 		ab_russia_boost = {
 			allow = {
+			OR = {
 				tag = RUS
+				num_of_provinces_in_territories = 50
+				}
 			}
 			modifier = {
 				governing_capacity_modifier = 0.33
@@ -809,10 +867,10 @@ age_of_revolutions = {
 		}
 		ab_austria_rep = {
 			allow = {
-				tag = HAB
+				is_emperor = yes
 			}
 			modifier = {
-				diplomatic_reputation = 5
+				imperial_authority_value = 0.2
 			}
 			ai_will_do = {
 				factor = 100

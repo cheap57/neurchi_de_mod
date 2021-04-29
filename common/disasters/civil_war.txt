@@ -35,7 +35,10 @@ civil_war = {
 			}
 			NOT = { imperial_mandate = 50 }
 			else = {
-				NOT = { legitimacy_or_horde_unity = 50 }
+				OR = {
+					NOT = { legitimacy_or_horde_unity = 50 }
+					NOT = { meritocracy = 50 }
+				}
 			}
 		}
 	}
@@ -51,7 +54,10 @@ civil_war = {
 				}
 				imperial_mandate = 75
 				else = {
-					legitimacy_or_horde_unity = 75
+					OR = {
+						legitimacy_or_horde_unity = 75
+						meritocracy = 75
+					}
 				}
 			}
 			has_regency = yes
@@ -97,7 +103,10 @@ civil_war = {
 			}
 			imperial_mandate = 75
 			else = {
-				legitimacy_or_horde_unity = 90
+				OR = {
+					legitimacy_or_horde_unity = 90
+					meritocracy = 90
+				}
 			}
 		}
 		NOT = { has_spawned_rebels = pretender_rebels }

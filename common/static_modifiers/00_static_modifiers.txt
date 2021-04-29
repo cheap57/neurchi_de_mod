@@ -288,7 +288,7 @@ patriarch_state = {
 # Multiplied in provinces of same religion.
 patriarch_authority_local = {
 	local_unrest = -3
-	local_manpower_modifier = 0.33
+	local_manpower_modifier = 0.2 #0.33
 }
 
 #for the country
@@ -611,31 +611,37 @@ negative_stability = {
 }
 
 positive_mandate = {	# 100% strength at 100 mandate, 0% at 50 mandate
-	global_unrest = -2.5
-	stability_cost_modifier = -0.1
-	war_exhaustion = -0.03
+
 }
 
 negative_mandate = { # By default, starts at 50 mandate, 100% strength at 0 mandate
-	global_trade_goods_size_modifier = -0.5
-	fire_damage_received = 0.5
-	shock_damage_received = 0.5
-	global_unrest = 5
-	mercenary_manpower = -0.5
-	global_manpower_modifier = -0.5
+
+}
+expanded_bureaucracy_decree = {
+	development_cost = -0.1
+	core_creation = -0.1
 }
 
+conducted_census_decree = {
+	global_tax_modifier = 0.25
+}
+
+promoted_naval_officers_decree = {
+	ship_durability = 0.2
+}
+increased_tariff_control_decree = {
+	global_prov_trade_power_modifier = 0.25
+}
+improved_defence_effort_decree = {
+	defensiveness = 0.25
+}
+boosted_officer_corps_decree = {
+	infantry_power = 0.1
+}
+
+
 lost_mandate_of_heaven = {
-	discipline = -0.1
-	stability_cost_modifier = 0.5
-	global_unrest = 10
-	global_trade_goods_size_modifier = -0.5
-	fire_damage_received = 0.5
-	shock_damage_received = 0.5
-	reduced_liberty_desire = -50
-	legitimacy = -1
-	mercenary_manpower = -0.5
-	global_manpower_modifier = -0.5
+
 }
 
 cancelled_loan = {
