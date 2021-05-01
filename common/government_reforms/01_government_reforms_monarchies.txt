@@ -57,6 +57,14 @@ plutocratic_reform = {
 			technology_group = chinese
 			technology_group = east_african
 		}
+		NOT = {
+			OR = {
+				culture_group = east_asian
+				primary_culture = zhuang
+				primary_culture = yi
+				primary_culture = bai
+			}
+		}
 	}
 	nation_designer_trigger = {
 		OR = {
@@ -103,6 +111,80 @@ plutocratic_reform = {
 		can_use_trade_post = yes
 		can_form_trade_league = yes
 		trade_city_reform = trading_city
+	}
+	ai = {
+		factor = 0.75 #generic
+	}
+}
+
+chinese_plutocratic_reform = {
+	icon = "asian_scripture"
+	allow_normal_conversion = yes
+	legacy_equivalent = despotic_monarchy
+	potential = {
+		OR = {
+			#technology_group = indian
+			#technology_group = muslim
+			technology_group = chinese
+			#technology_group = east_african
+		}
+		
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+	}
+	nation_designer_trigger = {
+		OR = {
+			technology_group = indian
+			technology_group = muslim
+			technology_group = chinese
+			technology_group = east_african
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	modifiers = {
+		merchants = 1
+		nobles_influence_modifier = -0.05
+		burghers_influence_modifier = 0.05
+		vaisyas_influence_modifier = 0.05
+	}
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		allow_draft_transport_ships = yes
+	}
+	boost_income = yes
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		has_meritocracy = yes
 	}
 	ai = {
 		factor = 0.75 #generic
@@ -325,6 +407,7 @@ celestial_empire = {
 	legacy_equivalent = celestial_empire_legacy
 	maintain_dynasty = yes
 	allow_force_tributary = no
+	allow_vassal_alliance = yes
 	valid_for_nation_designer = yes
 	nation_designer_cost = 10
 	lock_level_when_selected = yes
@@ -354,6 +437,8 @@ celestial_empire = {
 		nobles_influence_modifier = -0.1
 		burghers_influence_modifier = -0.1
 		governing_capacity = 300
+		global_manpower_modifier = 0.15
+		land_forcelimit_modifier = 0.15
 	}
 	
 	ai = {
@@ -546,13 +631,13 @@ prussian_monarchy = {
 	legacy_equivalent = prussian_monarchy_legacy
 
 	modifiers = {
-		war_exhaustion = -0.02
-		global_unrest = -2
-		global_autonomy = -0.075
-		max_absolutism = 10
+		#war_exhaustion = -0.02
+		#global_unrest = -2
+		#global_autonomy = -0.075
+		#max_absolutism = 10
 		monarch_military_power = 3
-		nobles_loyalty_modifier = 0.1
-		governing_capacity_modifier = -0.5
+		#nobles_loyalty_modifier = 0.1
+		#governing_capacity_modifier = -0.5
 	}
 
 	conditional = {
@@ -560,7 +645,93 @@ prussian_monarchy = {
 		militarised_society = yes
 	}
 }
+militarized_society_reform = {
+	icon = "prussian_monarchy"
+	allow_normal_conversion = yes
+	potential = {
+		AND = {
+			is_monarch_leader = yes
+			OR = {
+				religion = protestant
+				religion = reformed
+				religion = hussite
+				religion = anglican
+			}
+			mil = 5
+			NOT = { any_country = { army_professionalism = root } }
+			have_had_reform = militarized_society_reform
+		}
+	}
+	trigger = {
+		OR = {
+			army_professionalism = 0.75
+			estate_influence = {
+				estate = estate_nobles
+				influence = 80
+			}
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 100
+	legacy_equivalent = prussian_monarchy_legacy
 
+	modifiers = {
+		#war_exhaustion = -0.02
+		#global_unrest = -2
+		#global_autonomy = -0.075
+		#max_absolutism = 10
+		monarch_military_power = 3
+		#nobles_loyalty_modifier = 0.1
+		#governing_capacity_modifier = -0.5
+	}
+
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+}
+shun_autocracy_reform = {
+	icon = "celestial_empire"
+	allow_normal_conversion = yes
+	legacy_equivalent = prussian_monarchy_legacy
+	
+	potential = {
+		OR = {
+			has_reform = chinese_plutocratic_reform
+		}
+	}
+		
+	trigger = {
+		OR = {
+			tag = CSH
+			AND = {
+				NOT = {
+					any_country = {
+						has_reform = shun_autocracy_reform
+						}
+				}
+				capital_scope = {
+					area = gansu_area
+				}
+			}
+		}
+	}
+	
+	modifiers = {
+		#war_exhaustion = -0.02
+		#global_unrest = -2
+		#global_autonomy = -0.05 #-0.075
+		#max_absolutism = 5 #10
+		monarch_military_power = 1 #3 en Prusse
+		#nobles_loyalty_modifier = 0.1
+		#governing_capacity_modifier = -0.5
+	}
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+		#has_meritocracy = yes
+	}
+}
 austrian_dual_monarchy = {
 	icon = "austrian_dual_monarchy_reform"
 	allow_normal_conversion = yes
@@ -613,6 +784,8 @@ principality = {
 		global_unrest = -1
 		global_tax_modifier = 0.05
 		governing_capacity = 100
+		build_cost = 0.1
+		build_time = 0.1
 	}
 
 	conditional = {
@@ -658,6 +831,8 @@ tsardom = {
 		yearly_absolutism = 0.5
 		global_autonomy = -0.05
 		governing_capacity = 250
+		build_cost = 0.1
+		build_time = 0.1
 	}
 
 	conditional = {
