@@ -917,13 +917,17 @@ devotion = {
 
 # Multiplied by current meritocracy - 50
 meritocracy = {
-	global_spy_defence = 1.0
-	advisor_cost = -0.5
+	global_spy_defence = 0.25
+	advisor_cost = -0.15
+	global_autonomy = -0.05
 }
 
 # Multiplied by 50 - meritocracy
 low_meritocracy = {
 	yearly_corruption = 0.2 #i.e. 0.1 at 0 Meritocracy
+	global_spy_defence = -0.25
+	advisor_cost = 0.15
+	min_autonomy = 10
 }
 
 # Scaled, multiplied by current corruption / 100
@@ -971,6 +975,15 @@ militarized_society = {
 	discipline = 0.10
 	manpower_recovery_speed = 0.20
 	land_maintenance_modifier = -0.20
+	
+	#PRU gov
+	governing_capacity_modifier = -0.67
+	
+	war_exhaustion = -0.02
+	global_unrest = -2
+	global_autonomy = -0.075
+	max_absolutism = 10
+	nobles_loyalty_modifier = 0.1
 
 }
 
@@ -1181,9 +1194,11 @@ absolutism = {
 	core_decay_on_your_own = -0.5
 }
 
+
 low_army_professionalism = {
-	mercenary_cost = -0.15
-	mercenary_manpower = 0.15
+	mercenary_cost = -0.25
+	mercenary_manpower = 0.25
+	monthly_militarized_society = -0.05
 }
 
 high_army_professionalism = {
@@ -1191,6 +1206,8 @@ high_army_professionalism = {
 	shock_damage = 0.1
 	siege_ability = 0.2
 	drill_decay_modifier = -0.5
+	drill_gain_modifier = 1
+	monthly_militarized_society = 0.05
 }
 
 streltsy_modifier = {
