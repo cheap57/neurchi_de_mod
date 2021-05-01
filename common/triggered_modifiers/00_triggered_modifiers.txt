@@ -20,7 +20,7 @@ east_indian_trade_route = {
 				continent = oceania
 			}
 		}
-		
+
 	}
 
 	trigger = {
@@ -38,7 +38,7 @@ east_indian_trade_route = {
 		}
 	}
 
-	trade_efficiency = 0.05	
+	trade_efficiency = 0.05
 }
 
 #########################################################
@@ -301,9 +301,9 @@ catholic_rome = {
 		NOT = { tag = PAP }
 	}
 
-	trigger = {	
+	trigger = {
 		NOT = { overlord_of = PAP }
-		owns_or_vassal_of = 118 # Roma		
+		owns_or_vassal_of = 118 # Roma
 		NOT = { tag = ITA }
 		NOT = { tag = ROM }
 	}
@@ -321,7 +321,7 @@ papal_subjugation = {
 		NOT = { tag = PAP }
 	}
 
-	trigger = {	
+	trigger = {
 		overlord_of = PAP
 		NOT = { tag = ITA }
 	}
@@ -341,7 +341,7 @@ rapid_collapse_of_society = {
 				continent = new_world
 			}
 		}
-		
+
 	}
 	trigger = {
 		NOT = { has_institution = feudalism }
@@ -356,11 +356,11 @@ rapid_collapse_of_society = {
 			}
 		}
 	}
-	
+
 	all_power_cost = 0.33
 	discipline = -0.1
 	land_morale = -0.2
-	
+
 }
 
 ######################################
@@ -416,7 +416,7 @@ counter_revolution = {
 			}
 			revolution_target = {
 				truce_with = ROOT
-			} 
+			}
 		}
 		government = monarchy
 	}
@@ -450,7 +450,7 @@ reaction = {
 		government = monarchy
 		revolution_target = {
 			war_with = ROOT
-		}  
+		}
 
 	}
 
@@ -468,17 +468,17 @@ crusader = {
 		crusade_target = {
 			exists = yes
 		}
-		
+
 	}
 
 	trigger = {
-		
+
 		crusade_target = {
 			war_with = ROOT
 			any_province = {
 				controlled_by = root
 			}
-		}  
+		}
 		land_maintenance = 1.0
 	}
 
@@ -496,12 +496,12 @@ crusader = {
 ######################################
 excommunication = {
 	potential = {
-		religion = catholic	
+		religion = catholic
 	}
 
 	trigger = {
 		is_excommunicated = yes
-		
+
 	}
 
 	prestige = -2
@@ -539,111 +539,1235 @@ pentarchy_mod = {
 		379 = { religion = orthodox }
 		358 = { religion = orthodox }
 	}
-	
+
 	prestige = 0.5
 	missionaries = 1
 }
-
 ##################################################
 # China modifiers
 ##################################################
-the_mandate_of_heaven = {
+
+abandoned_chinese_1 = {
 	potential = {
-		has_reform = celestial_empire
-		NOT = { has_dlc = "Mandate of Heaven" }
-	}
-	
-	trigger = {	
-		stability = 0
-		legitimacy = 60
-		num_of_cities = 20
-	}
-
-	stability_cost_modifier = -0.10
-	global_unrest = -5
-}
-
-the_mandate_of_heaven_lost = {
-	potential = {
-		has_reform = celestial_empire
-		NOT = { has_dlc = "Mandate of Heaven" }
-	}
-
-	trigger = {
 		OR = {
-			NOT = { stability = 0 }
-			NOT = { legitimacy = 60 }
-			NOT = { num_of_cities = 20 }	
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					owner = {
+						NOT = {
+							culture_group = east_asian
+							primary_culture = zhuang
+							primary_culture = yi
+							has_reform = celestial_empire
+						}
+					}
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 12
+			}
 		}
 	}
 
-	discipline = -0.1
-	stability_cost_modifier = 0.5
-	global_unrest = 10
-}
-
-lost_control_of_beijing = {
-	potential = {
-		has_reform = celestial_empire
-		has_dlc = "Mandate of Heaven"
-	}
-
 	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 6
+		}
+	}
+	imperial_mandate = -0.01
+}
+abandoned_chinese_2 = {
+	potential = {
 		OR = {
-			NOT = { owns = 1816 }
-			NOT = { controls = 1816 }
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 12
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					owner = {
+						NOT = {
+							culture_group = east_asian
+							primary_culture = zhuang
+							primary_culture = yi
+							has_reform = celestial_empire
+						}
+					}
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 18
+			}
 		}
 	}
 
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 12
+		}
+	}
+	imperial_mandate = -0.02
+}
+abandoned_chinese_3 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 18
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					owner = {
+						NOT = {
+							culture_group = east_asian
+							primary_culture = zhuang
+							primary_culture = yi
+							has_reform = celestial_empire
+						}
+					}
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 24
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 18
+		}
+	}
+	imperial_mandate = -0.04
+}
+abandoned_chinese_4 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 24
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					owner = {
+						NOT = {
+							culture_group = east_asian
+							primary_culture = zhuang
+							primary_culture = yi
+							has_reform = celestial_empire
+						}
+					}
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 30
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 24
+		}
+	}
+	imperial_mandate = -0.06
+}
+
+abandoned_chinese_5 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 30
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				owner = {
+					NOT = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+						has_reform = celestial_empire
+					}
+				}
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 30
+		}
+	}
+	imperial_mandate = -0.1
+}
+
+devastation_in_china_1 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					devastation = 0.05
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 12
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				devastation = 0.05
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 6
+		}
+	}
+	imperial_mandate = -0.01
+}
+devastation_in_china_2 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				devastation = 0.05
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 12
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					devastation = 0.05
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 18
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				devastation = 0.05
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 12
+		}
+	}
+	imperial_mandate = -0.02
+}
+devastation_in_china_3 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				devastation = 0.05
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 18
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					devastation = 0.05
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 24
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				devastation = 0.05
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 18
+		}
+	}
+	imperial_mandate = -0.03
+}
+devastation_in_china_4 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				devastation = 0.05
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 24
+		}
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					devastation = 0.05
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 30
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				devastation = 0.05
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 24
+		}
+	}
+	imperial_mandate = -0.04
+}
+devastation_in_china_5 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				devastation = 0.05
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 30
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				devastation = 0.05
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 30
+		}
+	}
 	imperial_mandate = -0.05
 }
 
-lost_control_of_nanjing = {
+prosperity_in_china_1 = {
 	potential = {
-		has_reform = celestial_empire
-		has_dlc = "Mandate of Heaven"
-	}
-
-	trigger = {
 		OR = {
-			NOT = { owns = 1821 }
-			NOT = { controls = 1821 }
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		NOT = {		
+			calc_true_if = {
+				all_province = {
+					is_prosperous = yes
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 24
+			}
 		}
 	}
 
-	imperial_mandate = -0.05
-}
-
-lost_control_of_canton = {
-	potential = {
-		has_reform = celestial_empire
-		has_dlc = "Mandate of Heaven"
-	}
-
 	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				is_prosperous = yes
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 12
+		}
+	}
+	imperial_mandate = 0.01
+}
+prosperity_in_china_2 = {
+	potential = {
 		OR = {
-			NOT = { owns = 667 }
-			NOT = { controls = 667 }
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
 		}
-	}
-
-	imperial_mandate = -0.05
-}
-
-waging_war_for_china = {
-	potential = {
-		has_reform = celestial_empire
-		has_dlc = "Mandate of Heaven"
+		calc_true_if = {
+			all_province = {
+				is_prosperous = yes
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 24
+		}
+		NOT = {		
+			calc_true_if = {
+				all_province = {
+					is_prosperous = yes
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 36
+			}
+		}
 	}
 
 	trigger = {
-		is_in_war = {
-			attacker_leader = root
-			casus_belli = cb_chinese_unification
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				is_prosperous = yes
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 24
 		}
 	}
-	
+	imperial_mandate = 0.02
+}
+prosperity_in_china_3 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				is_prosperous = yes
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 36
+		}
+		NOT = {		
+			calc_true_if = {
+				all_province = {
+					is_prosperous = yes
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 48
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				is_prosperous = yes
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 36
+		}
+	}
+	imperial_mandate = 0.03
+}
+prosperity_in_china_4 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				is_prosperous = yes
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 48
+		}
+		NOT = {		
+			calc_true_if = {
+				all_province = {
+					is_prosperous = yes
+					OR = {
+						culture_group = east_asian
+						primary_culture = zhuang
+						primary_culture = yi
+					}
+				}
+				amount = 60
+			}
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				is_prosperous = yes
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 48
+		}
+	}
+	imperial_mandate = 0.04
+}
+prosperity_in_china_5 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		calc_true_if = {
+			all_province = {
+				is_prosperous = yes
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 60
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		calc_true_if = {
+			all_province = {
+				is_prosperous = yes
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+				}
+			}
+			amount = 60
+		}
+	}
 	imperial_mandate = 0.05
+}
+
+civil_war_in_china = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+	}
+
+	trigger = {
+		#has_reform = celestial_empire
+		any_country = {
+				OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+					primary_culture = bai
+				}
+				any_country = {
+					war_with = PREV
+
+					OR = {
+					culture_group = east_asian
+					primary_culture = zhuang
+					primary_culture = yi
+					primary_culture = bai
+					}
+				}
+			}
+
+		}
+
+	imperial_mandate = -0.1
+}
+
+chinese_reform_1 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+	}
+	trigger = {
+		has_global_flag = chinese_reform_1
+	}
+	build_cost = -0.075
+	global_tax_modifier = 0.05
+}
+chinese_reform_2 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+	}
+	trigger = {
+		has_global_flag = chinese_reform_2
+	}
+	trade_efficiency = 0.1
+	diplomats = 1
+}
+chinese_reform_3 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+	}
+	trigger = {
+		has_global_flag = chinese_reform_3
+	}
+	global_autonomy = -0.05
+	production_efficiency = 0.1
+}
+chinese_reform_4 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+	}
+	trigger = {
+		has_global_flag = chinese_reform_4
+	}
+	state_maintenance_modifier = -0.25
+	global_manpower_modifier = 0.10
+}
+chinese_reform_5 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+	}
+	trigger = {
+		has_global_flag = chinese_reform_5
+	}
+	manpower_recovery_speed = 0.1
+	reinforce_speed = 0.10
+}
+
+the_mandate_of_heaven_0 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+	}
+
+	trigger = {
+		NOT = { imperial_mandate = 10 }
+	}
+
+	global_unrest = 10
+	meritocracy = -1
+	global_tax_modifier = -0.1
+	global_manpower_modifier = -0.1
+	mercenary_manpower= -0.1
+
+	fire_damage_received = 0.25
+	shock_damage_received = 0.25
+	global_sailors_modifier = -0.5
+}
+
+the_mandate_of_heaven_10 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+		NOT = { imperial_mandate = 20 }
+		imperial_mandate = 10
+	}
+
+	trigger = {
+		NOT = { imperial_mandate = 20 }
+		imperial_mandate = 10
+	}
+
+	global_unrest = 8
+	meritocracy = -0.8
+	global_tax_modifier = -0.08
+	global_manpower_modifier = -0.08
+	mercenary_manpower= -0.08
+
+	fire_damage_received = 0.2
+	shock_damage_received = 0.2
+	global_sailors_modifier = -0.4
+}
+
+
+the_mandate_of_heaven_20 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+		NOT = { imperial_mandate = 30 }
+		imperial_mandate = 20
+	}
+
+	trigger = {
+		NOT = { imperial_mandate = 30 }
+		imperial_mandate = 20
+	}
+
+	global_unrest = 6
+	meritocracy = -0.6
+	global_tax_modifier = -0.06
+	global_manpower_modifier = -0.06
+	mercenary_manpower= -0.06
+
+	fire_damage_received = 0.15
+	shock_damage_received = 0.15
+	global_sailors_modifier = -0.3
+}
+
+the_mandate_of_heaven_30 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+		NOT = { imperial_mandate = 40 }
+		imperial_mandate = 30
+	}
+
+	trigger = {
+		NOT = { imperial_mandate = 40 }
+		imperial_mandate = 30
+	}
+
+	global_unrest = 4
+	meritocracy = -0.4
+	global_tax_modifier = -0.04
+	global_manpower_modifier = -0.04
+	mercenary_manpower= -0.04
+
+	fire_damage_received = 0.1
+	shock_damage_received = 0.1
+	global_sailors_modifier = -0.2
+}
+
+the_mandate_of_heaven_40 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+		NOT = { imperial_mandate = 50 }
+		imperial_mandate = 40
+	}
+
+	trigger = {
+		NOT = { imperial_mandate = 50 }
+		imperial_mandate = 40
+	}
+
+	global_unrest = 2
+	meritocracy = -0.2
+	global_tax_modifier = -0.02
+	global_manpower_modifier = -0.02
+	mercenary_manpower= -0.02
+
+	fire_damage_received = 0.05
+	shock_damage_received = 0.05
+	global_sailors_modifier = -0.1
+}
+
+the_mandate_of_heaven_50 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+		NOT = { imperial_mandate = 60 }
+		imperial_mandate = 50
+	}
+
+	trigger = {
+		NOT = { imperial_mandate = 60 }
+		imperial_mandate = 50
+	}
+
+	global_unrest = -.5
+	global_tax_modifier = 0.02
+	global_institution_spread = 0.02
+	meritocracy = 0.2
+	naval_forcelimit_modifier = 0.01
+	land_morale = 0.02
+}
+
+the_mandate_of_heaven_60 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+		NOT = { imperial_mandate = 70 }
+		imperial_mandate = 60
+	}
+
+	trigger = {
+		NOT = { imperial_mandate = 70 }
+		imperial_mandate = 60
+	}
+
+	global_unrest = -1
+	global_tax_modifier = 0.04
+	global_institution_spread = 0.04
+	meritocracy = 0.4
+	naval_forcelimit_modifier = 0.03
+	land_morale = 0.04
+}
+
+the_mandate_of_heaven_70 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+		NOT = { imperial_mandate = 80 }
+		imperial_mandate = 70
+	}
+
+	trigger = {
+		NOT = { imperial_mandate = 80 }
+		imperial_mandate = 70
+	}
+
+	global_unrest = -1.5
+	global_tax_modifier = 0.06
+	war_exhaustion = -0.01
+	global_institution_spread = 0.06
+	meritocracy = 0.6
+	naval_forcelimit_modifier = 0.09
+	land_morale = 0.06
+}
+
+the_mandate_of_heaven_80 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+		NOT = { imperial_mandate = 90 }
+		imperial_mandate = 80
+	}
+
+	trigger = {
+		NOT = { imperial_mandate = 90 }
+		imperial_mandate = 80
+	}
+
+	global_unrest = -2
+	global_tax_modifier = 0.08
+	war_exhaustion = -0.02
+	global_institution_spread = 0.08
+	meritocracy = 0.8
+	naval_forcelimit_modifier = 0.18
+	land_morale = 0.08
+}
+
+the_mandate_of_heaven_90 = {
+	potential = {
+		OR = {
+			culture_group = east_asian
+			primary_culture = zhuang
+			primary_culture = yi
+			primary_culture = bai
+		}
+		OR = {
+		has_reform = celestial_empire
+		is_subject_of_type = tributary_state
+		has_reform = chinese_plutocratic_reform
+		}
+	}
+
+	trigger = {
+		imperial_mandate = 90
+	}
+
+	global_unrest = -2.5
+	global_tax_modifier = 0.1
+	war_exhaustion = -0.03
+	global_institution_spread = 0.1
+	meritocracy = 1
+	naval_forcelimit_modifier = 0.3
+	land_morale = 0.1
 }
 
 ##################################################
@@ -666,7 +1790,7 @@ hre_dominant_catholic = {
 		hre_religion = catholic
 		hre_religion_locked = yes
 	}
-	
+
 	legitimacy = 0.25
 	tolerance_own = 1
 	global_missionary_strength = 0.01
@@ -690,7 +1814,7 @@ hre_dominant_protestant = {
 		hre_religion = protestant
 		hre_religion_locked = yes
 	}
-	
+
 	legitimacy = 0.25
 	tolerance_own = 1
 	global_missionary_strength = 0.01
@@ -714,11 +1838,44 @@ hre_dominant_reformed = {
 		hre_religion = reformed
 		hre_religion_locked = yes
 	}
-	
+
 	legitimacy = 0.25
 	tolerance_own = 1
 	global_missionary_strength = 0.01
 	imperial_authority = 0.25
+}
+
+failed_to_win_league_war_cathos = {
+potential = {
+		OR = {
+			religion = catholic
+		}
+	}
+	trigger = {
+		has_country_modifier = joined_league_war
+		hre_heretic_religion = catholic
+		hre_religion_locked = yes
+	}
+	tolerance_own = -4
+	#tolerance_heretic = 1
+}
+
+failed_to_win_league_war_others = {
+potential = {
+		OR = {
+			religion = protestant
+			religion = reformed
+			religion = hussite
+			religion = anglican
+		}
+	}
+	trigger = {
+		has_country_modifier = joined_league_war
+		hre_heretic_religion = protestant
+		hre_religion_locked = yes
+	}
+	tolerance_own = -4
+	#tolerance_heretic = 1
 }
 
 ######################################
@@ -794,18 +1951,6 @@ great_peasants_war_concessions_triggered_modifier = {
 # Pope is in the empire
 ######################################
 
-pope_in_hre_triggered_modifier = {
-	potential = {
-		PAP = { is_part_of_hre = yes }
-		religion = catholic
-	}
-	trigger = {
-		PAP = { is_part_of_hre = yes }
-		religion = catholic
-		NOT = { is_part_of_hre = yes }
-	}
-	prestige = -0.5
-}
 
 ######################################
 # The Italian Wars
