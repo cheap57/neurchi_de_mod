@@ -1149,7 +1149,6 @@ naval_ideas = { #Priveteers & guerre de course
 
 	bonus = {
 		may_perform_slave_raid_on_same_religion = yes
-		may_perform_slave_raid = yes
 	}
 
 	private_wars_1 = {

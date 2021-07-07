@@ -123,6 +123,8 @@ NDiplomacy = {
 	EMPEROR_REVOKE_MODIFIER_DAYS = 1800,			-- How long the temporary modifier applied after revoking will last
 	TRUCE_YEARS = 5, 								-- _DDEF_TRUCE_YEARS_; Years of Truce
 	SCALED_TRUCE_YEARS = 10,						-- Additional years of truce based on % of warscore taken in war (100% warscore = full scaled truce years)
+	REQUEST_HEIR_TRUCE = 5,
+	REQUEST_HEIR_AE = 20,
 	WARNING_YEARS = 20,								-- Years before warning expire
 	ANNUL_TREATIES_YEARS = 10,						-- Years before annul treaties expire
 	COALITION_YEARS = 20,							-- Years before coalition expire
@@ -130,7 +132,9 @@ NDiplomacy = {
 	REVANCHISM_MONTHLY_DECAY = 0.833,			-- about 20 years to decay all of it.
 	MONARCH_GOV_CHANGE_LEGITIMACY_PENALTY = 0.0,	-- Penalty(%) on the legitimacy when changing gov type to the monarchy
 	EXTEND_REGENCY_LEGITIMACY_PENALTY = 10,  		-- Penalty for extending a regency
+	EXTEND_REGENCY_IMPERIAL_AUTHORITY_PENALTY = 20, -- Penalty for extending a regency
 	DEFAULT_EXTEND_REGENCY_YEARS = 5,
+	EXTEND_REGENCY_ALERT_LEEWAY_DAYS = 365,
 	BASE_SPY_DISCOVERY_CHANCE = 0.25,
 	JUSTIFY_TRADE_CONFLICT_LIMIT = 0.2,			-- How big share of the trade power needed on the target to be able to justify a trade conflict
 	JUSTIFY_TRADE_CONFLICT_ACTOR_LIMIT = 0.1,	-- How big share of the trade power needed on the actor to be able to justify a trade conflict
@@ -261,6 +265,7 @@ NDiplomacy = {
 	PEACE_COST_RELEASE_VASSAL = 0.5,					-- Release vassal (scales by province wealth)
 	PEACE_COST_REVOKE_ELECTOR = 60,					-- Revoke an elector title
 	PEACE_COST_UNION = 60, 							-- _DDEF_PEACE_COST_UNION_ Peace cost for forming a personal union
+	PEACE_COST_SUBJUGATE = 90, 							-- Peace cost for subjugating an enemy using the subjugation CB
 	PEACE_COST_CONVERSION = 1,					-- scaled with countrysize for forced conversion in peace.
 	PEACE_COST_RELEASE = 2, 						-- _DDEF_PEACE_COST_RELEASE_ Base Peace cost for releasing an annexed country (also increases with nr of provinces)
 	PEACE_COST_CONCEDE = 10, 						-- _DDEF_PEACE_COST_CONCEDE_ Base Peace cost for conceding defeat
@@ -450,7 +455,7 @@ NCountry = {
 	EXPLOIT_DIP_SAILORS = 6,
 	EXPLOIT_MIL_MANPOWER = 6,
 	EXPLOIT_COOLDOWN_MONTHS = 240,
-
+	
 	MONTHS_FOR_MAX_MP_ALERT = 3,
 
 	CHANGE_COLONIAL_TYPE_COOLDOWN_DURATION = 10,
@@ -971,6 +976,7 @@ NCountry = {
 	TRADE_FAVORS_FOR_HEIR_REQUIRED_OPINION = 50,
 	TRADE_FAVORS_FOR_TRUST_REQUIRED_OPINION = 50,
 	TRADE_FAVORS_FOR_WAR_PREP_REQUIRED_OPINION = 50,
+	USING_FAVORS_AI_BOOST = 50,
 	NEW_FAVOR_HEIR_AGE_RANDOM_FACTOR = 12,
 	NEW_FAVOR_HEIR_AGE_MIN_FACTOR = 18,
 	NEW_HEIR_QUEEN_CHANCE = 100,					-- Chance to get a Queen when an Heir is created.
@@ -1048,6 +1054,9 @@ NCountry = {
 	FEDERATION_DESIRABILITY_WANTS_WEAKEN = -10,
 	FEDERATION_DESIRABILITY_DONT_WANT_TO_CHANGE = -10,
 	FEDERATION_ACTION_COOLDOWN = 5,
+	BREAK_ALLIANCE_ACTION_COOLDOWN = 10,
+	TRADE_FAVORS_ACTION_COOLDOWN = 5,
+	REDUCE_RELATION_ACTION_COOLDOWN = 15,
 	
 	FEDERATION_ADVANCEMENT_COHESION_REQUIREMENT = 100.0,
 	FEDERATION_ADVANCEMENT_COHESION_COST = 80.0,
@@ -1547,7 +1556,9 @@ NAI = {
 	REVOLUTION_EMBRACE_MAX_ABSOLUTISM = 49, -- AI will not consider embracing the revolution (unless a disaster happens) if their absolutism if over this value
 	BASE_CAN_MAKE_CORE_DESIRE_TO_RETURN_PROVINCE = 10, --score to add to desire to keep province rather than returning it to someone or creating a trading city if you can core it straight away
 	BASE_CAN_MAKE_CORE_IN_AREA_DESIRE_TO_RETURN_PROVINCE = 8, --score to add to desire to keep province rather than returning it to someone or creating a trading city if you can core it soon
-	
+	GOVERNING_CAPACITY_OVER_PERCENTAGE_TOLERATED = 0.2,
+	DANGEROUS_OVEREXTENSION_PERCENTAGE = 0.1,
+
 	DEBASE_THRESHOLD = 10000,-- AI will not debase if it has more gold than this.
 
 	DEVELOPMENT_CAP_BASE = 10,	-- AI will not develop provinces that have more development than this or DEVELOPMENT_CAP_MULT*original development (whichever is bigger)
@@ -1692,6 +1703,7 @@ NAI = {
 
 	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_GOLD_BASE_SCORE = 50,
 	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_GOLD_PREPARING_FOR_WAR_SCORE = 100,
+	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_GOLD_WANTS_GOLD = 100,
 	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_GOLD_CAPITALIST_MULT = 1.5,
 
 	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_MEN_BASE_SCORE = 50,
@@ -2411,7 +2423,7 @@ NGovernment = {
 	GOVERNMENT_REFORM_HISTORIC_AUTONOMY = 0.25,
 	GOVERNMENT_REFORM_CHANGE_PROGRESS_COST = 50.0,
 	GOVERNMENT_REFORM_COST_CENTRALIZE_STATE = 100.0,
-	CENTRALIZE_STATE_PROVINCE_COST_LIMIT = 10.0,
+	CENTRALIZE_STATE_STATE_COST_LIMIT = 10.0,
 	CENTRALIZE_STATE_REDUCTION = 20.0,
 	CENTRALIZE_STATE_YEARS = 5,
 	DICTATORSHIP_TO_MONARCHY_REFORM_PENALTY = 4,
