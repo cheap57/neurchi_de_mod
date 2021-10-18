@@ -1,0 +1,211 @@
+# Chinese alliance
+alliance = {
+	first = CSH
+	second = CXI
+	start_date = 1643.1.1
+	end_date = 1645.12.31
+}
+
+alliance = {
+	first = CZH
+	second = MNG
+	start_date = 1673.1.1
+	end_date = 1681.12.31
+}
+
+#Manchu vassal
+vassal = {
+	first = QNG
+	second = CZH
+	start_date = 1662.1.1
+	end_date = 1672.12.31
+}
+
+#Manchu vassal
+vassal = {
+	first = MCH
+	second = KOR
+	start_date = 1637.1.1
+	end_date = 1645.6.30
+}
+
+#Manchu vassal
+vassal = {
+	first = QNG
+	second = KOR
+	start_date = 1645.7.1
+	end_date = 1895.1.1
+}
+
+# Seven-Year war
+alliance = {
+	first = MNG
+	second = KOR
+	start_date = 1593.1.1
+	end_date = 1598.1.1
+}
+
+# Tibet and Manchu
+vassal = {
+	first = QNG
+	second = UTS
+	start_date = 1724.1.1
+	end_date = 1792.11.1
+}
+
+vassal = {
+	first = QNG
+	second = KAM
+	start_date = 1724.1.1
+	end_date = 1776.1.1
+}
+
+# Mongol Khanate and the Oirats
+
+#Chagatai Subject
+vassal = {
+	first = CHG
+	second = KAS
+	start_date = 1444.1.1
+	end_date = 1462.1.1
+}
+
+#Ming Tributaries
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = MJZ
+	start_date = 1444.1.1
+	end_date = 1618.1.1
+}
+
+#MOD NEURCHI
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = CDL
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = CSH
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = CXI
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = CYI
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = SHU
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = WUU
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = YUE
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = JIN
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = LNG
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = TNG
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = QIN
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = CHC
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = MIN
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = CMI
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = CGS
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = NNG
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}

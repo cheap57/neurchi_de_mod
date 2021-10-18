@@ -852,7 +852,7 @@ quality_ideas = {
 	}
 
 	private_to_marshal = {
-		infantry_power = 0.75
+		infantry_power = 0.075
 	}
 	quality_education = {
 		army_tradition = 0.5
