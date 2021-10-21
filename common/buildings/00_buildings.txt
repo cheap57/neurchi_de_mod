@@ -216,12 +216,17 @@ fort_15th = {
 		NOT = {
 			calc_true_if = {
 				all_neighbor_province = {
-					owned_by = owner
-					OR = {
-						has_building = fort_15th
-						has_building = fort_16th
-						has_building = fort_17th
-						has_building = fort_18th
+					AND = {
+						OR = {
+							owned_by = ROOT
+							owned_by = FROM
+						}
+						OR = {
+							has_building = fort_15th
+							has_building = fort_16th
+							has_building = fort_17th
+							has_building = fort_18th
+						}
 					}
 				}
 				amount = 2
@@ -448,17 +453,21 @@ fort_16th = {
 		fort_level = 4
 	}
 
-
 	build_trigger = {
 		NOT = {
 			calc_true_if = {
 				all_neighbor_province = {
-					owned_by = owner
-					OR = {
-						has_building = fort_15th
-						has_building = fort_16th
-						has_building = fort_17th
-						has_building = fort_18th
+					AND = {
+						OR = {
+							owned_by = ROOT
+							owned_by = FROM
+						}
+						OR = {
+							has_building = fort_15th
+							has_building = fort_16th
+							has_building = fort_17th
+							has_building = fort_18th
+						}
 					}
 				}
 				amount = 2
@@ -755,12 +764,17 @@ fort_17th = {
 		NOT = {
 			calc_true_if = {
 				all_neighbor_province = {
-					owned_by = owner
-					OR = {
-						has_building = fort_15th
-						has_building = fort_16th
-						has_building = fort_17th
-						has_building = fort_18th
+					AND = {
+						OR = {
+							owned_by = ROOT
+							owned_by = FROM
+						}
+						OR = {
+							has_building = fort_15th
+							has_building = fort_16th
+							has_building = fort_17th
+							has_building = fort_18th
+						}
 					}
 				}
 				amount = 2
@@ -1027,12 +1041,17 @@ fort_18th = {
 		NOT = {
 			calc_true_if = {
 				all_neighbor_province = {
-					owned_by = FROM
-					OR = {
-						has_building = fort_15th
-						has_building = fort_16th
-						has_building = fort_17th
-						has_building = fort_18th
+					AND = {
+						OR = {
+							owned_by = ROOT
+							owned_by = FROM
+						}
+						OR = {
+							has_building = fort_15th
+							has_building = fort_16th
+							has_building = fort_17th
+							has_building = fort_18th
+						}
 					}
 				}
 				amount = 2
