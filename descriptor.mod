@@ -4,5 +4,5 @@ tags={
 }
 name="Neurchi de Multi Paradoxien"
 picture="thumbnail.jpg"
-supported_version="1.31.6"
+supported_version="1.32.2"
 remote_file_id="2176112856"

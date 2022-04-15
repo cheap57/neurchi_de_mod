@@ -167,9 +167,7 @@ cb_trade_war_triggered = {
 		po_release_annexed
 		po_return_cores
 		po_become_vassal
-		po_subjugate_vassal
 		po_become_tributary_state
-		po_subjugate_tributary_state
 		po_form_personal_union
 		po_transfer_vassals
 	}
@@ -190,10 +188,8 @@ cb_trade_conflict = {
 		po_release_annexed
 		po_return_cores
 		po_become_vassal
-		po_subjugate_vassal
 		po_form_personal_union
 		po_become_tributary_state
-		po_subjugate_tributary_state
 		po_transfer_vassals
 	}
 }
@@ -216,9 +212,7 @@ cb_trade_league_conflict = {
 		po_release_annexed
 		po_return_cores
 		po_become_vassal
-		po_subjugate_vassal
 		po_become_tributary_state
-		po_subjugate_tributary_state
 		po_form_personal_union
 		po_transfer_vassals
 	}
@@ -311,12 +305,6 @@ cb_humiliate = {
 		is_revolutionary = no
 	}
 
-	attacker_disabled_po = {
-		po_demand_provinces
-		po_become_vassal
-		po_subjugate_vassal
-	}
-
 	war_goal = humiliate
 }
 
@@ -350,7 +338,6 @@ cb_independence_war = {
 		is_subject_other_than_tributary_trigger = yes
 		is_subject_of = FROM
 		NOT = { is_colonial_nation_of = FROM }
-		NOT = { has_country_flag = burgundy_during_imperial_incident }
 		OR = {
 			AND = {
 				NOT = { has_reform = daimyo }
@@ -695,7 +682,6 @@ cb_liberation = {
 # Holy War
 cb_crusade = {
 	valid_for_subject = no
-	holy_war = yes
 
 	prerequisites = {
 		NOT = { has_reform = religious_permanent_revolution_reform }
@@ -737,7 +723,6 @@ cb_crusade = {
 # Holy War
 cb_crusade_pheasants = {
 	valid_for_subject = no
-	holy_war = yes
 	is_triggered_only = yes
 	months = 60
 
@@ -860,9 +845,7 @@ cb_trade_war = {
 		po_release_annexed
 		po_return_cores
 		po_become_vassal
-		po_subjugate_vassal
 		po_become_tributary_state
-		po_subjugate_tributary_state
 		po_form_personal_union
 		po_transfer_vassals
 	}
@@ -887,9 +870,7 @@ cb_trade_league_dispute = {
 		po_release_annexed
 		po_return_cores
 		po_become_vassal
-		po_subjugate_vassal
 		po_become_tributary_state
-		po_subjugate_tributary_state
 		po_form_personal_union
 		po_transfer_vassals
 	}
@@ -1180,9 +1161,7 @@ cb_humiliate_rotw = {
 		po_release_annexed
 		po_return_cores
 		po_become_vassal
-		po_subjugate_vassal
 		po_become_tributary_state
-		po_subjugate_tributary_state
 		po_form_personal_union
 		po_transfer_vassals
 	}
@@ -1235,17 +1214,20 @@ cb_chinese_unification = {
 
 # Take the Mandate of Heaven
 cb_take_mandate = {
-	valid_for_subject = no
+	valid_for_subject = yes
 
 	prerequisites = {
 		has_dlc = "Mandate of Heaven"
-		is_subject = no
-		is_neighbor_of = FROM
+		OR = {
+			is_subject = yes
+			is_subject = no
+		}
 		NOT = { has_reform = shogunate }
 		FROM = { is_emperor_of_china = yes }
 		OR = {
 			religion_group = pagan
 			religion_group = eastern
+			has_reform = chinese_plutocratic_reform
 		}
 		NOT = { truce_with = FROM }
 		is_revolutionary = no
@@ -1283,16 +1265,6 @@ cb_force_tributary = {
 		FROM = { is_subject = no }
 		is_neighbor_of = FROM
 	}
-	
-	war_goal = take_capital_force_tributary
-}
-
-cb_force_tributary_mission = {
-
-	valid_for_subject = no
-
-	is_triggered_only = yes
-	months = 300
 	
 	war_goal = take_capital_force_tributary
 }
@@ -1341,15 +1313,6 @@ cb_force_join_hre = {
 	}
 
 	war_goal = take_capital_force_join_hre
-}
-
-cb_reintegrate_into_hre = {
-	valid_for_subject = no
-
-	is_triggered_only = yes
-	months = 120
-
-	war_goal = take_capital_reintegrate_into_hre
 }
 
 # A HRE prince has been annexed
@@ -1469,20 +1432,11 @@ cb_force_migration = {
 
 	prerequisites = {
 		has_dlc = "Conquest of Paradise"
-		OR = {
-			is_native_tribe = yes
-			is_migratory_tribe = yes
-		}
+		is_native_tribe = yes
 		FROM = {
 			is_migratory_tribe = yes
-			OR = {
-				AND = {
-					is_native_tribe = yes
-					capital_scope = {
-						tribal_land_of = ROOT
-					}
-				}
-				is_native_tribe = no
+			capital_scope = {
+				tribal_land_of = ROOT
 			}
 		}
 	}
@@ -1516,13 +1470,6 @@ cb_native_american_tribal_feud = {
 		}
 	}
 	war_goal = take_native_american_land
-
-	attacker_disabled_po = {
-		po_become_vassal
-		po_subjugate_vassal
-		po_become_tributary_state
-		po_subjugate_tributary_state
-	}
 }
 
 # Burn European Colonies

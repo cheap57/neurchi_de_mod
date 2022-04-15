@@ -357,7 +357,7 @@ spy_ideas = {
 		can_fabricate_for_vassals = yes
 	}
 	audit_checks = {
-		yearly_corruption = -0.2
+		yearly_corruption = -0.1
 		diplomats = 1	
 	}
 
