@@ -2467,7 +2467,7 @@ industrialization = {
 	embracement_speed = {
 		#Split between RB and non-RB for these four as RB gives more possibilities for spread (so higher for non-RB to compensate
 		modifier = {
-			factor = 0.3
+			factor = 0.15
 			force_potential = yes
 			potential = {
 				has_dlc = "Rule Britannia"
@@ -2481,7 +2481,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.6
+			factor = 0.3
 			force_potential = yes
 			potential = {
 				NOT = { has_dlc = "Rule Britannia" }
@@ -2536,7 +2536,7 @@ industrialization = {
 		}
 		#Rule Britannia specific
 		modifier = {
-			factor = 1
+			factor = 0.12
 			force_potential = yes
 			potential = {
 				has_dlc = "Rule Britannia"
@@ -2551,7 +2551,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 1
+			factor = 0.25
 			force_potential = yes
 			potential = {
 				has_dlc = "Rule Britannia"
@@ -2566,7 +2566,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 1
+			factor = 0.5
 			force_potential = yes
 			potential = {
 				has_dlc = "Rule Britannia"
@@ -2600,7 +2600,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.25
+			factor = 0.1
 			scale = yes
 			force_potential = yes
 			potential = {
@@ -2622,7 +2622,7 @@ industrialization = {
 
 		#General Manufactories
 		modifier = {
-			factor = 0.15
+			factor = 0.10
 			scale = yes
 			potential = {
 				OR = {
@@ -2676,7 +2676,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.15
+			factor = 0.05
 			scale = yes
 			potential = {
 				OR = {
@@ -2697,7 +2697,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.15
+			factor = 0.05
 			scale = yes
 			potential = {
 				OR = {
@@ -2718,7 +2718,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.2
+			factor = 0.05
 			scale = yes
 			potential = {
 				OR = {
@@ -2736,7 +2736,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.15
+			factor = 0.05
 			scale = yes
 			potential = {
 				OR = {
@@ -2756,7 +2756,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.08
+			factor = 0.04
 			scale = yes
 			potential = {
 				OR = {
@@ -2774,7 +2774,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.15
+			factor = 0.05
 			scale = yes
 			potential = {
 				OR = {
@@ -2791,7 +2791,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.15
+			factor = 0.05
 			scale = yes
 			potential = {
 				OR = {
@@ -2810,7 +2810,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.08
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -2831,7 +2831,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.08
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -2852,7 +2852,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.1
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -2870,7 +2870,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 0.08
+			factor = 0.02
 			scale = yes
 			potential = {
 				OR = {
@@ -2892,7 +2892,7 @@ industrialization = {
 
 		#Trade variables
 		modifier = {
-			factor = 0.18
+			factor = 0.12
 			scale = yes
 			potential = {
 				any_trade_node_member_province = {
@@ -2905,9 +2905,9 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 3
+			factor = 2
 			potential = {
-				province_trade_power = 15
+				province_trade_power = 25
 			}
 			custom_trigger_tooltip = {
 				tooltip = tooltip_15_trade_power_and_50_percent_of_income_from_trade
@@ -2916,7 +2916,7 @@ industrialization = {
 			}
 		}
 		modifier = {
-			factor = 3
+			factor = 1
 			potential = {
 				continent = owner
 				has_port = yes
